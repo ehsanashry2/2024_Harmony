@@ -24,7 +24,7 @@ class _Page1State extends State<Page1> {
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                    "assets/images/1.png",
+                    "assets/images/2.png",
                   ),
                   fit: BoxFit.fill //fit: BoxFit.fill
                   ),
