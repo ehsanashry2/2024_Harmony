@@ -10,6 +10,6 @@ class Page4 extends StatefulWidget {
 class _Page4State extends State<Page4> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }
