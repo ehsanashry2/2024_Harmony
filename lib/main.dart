@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ocd/auth/screen_ui/signup.dart';
-
 import 'package:ocd/features/onboarding/page1.dart';
 import 'package:ocd/model/authModel/signup.dart';
 import 'package:provider/provider.dart';
-//import 'package:ocd/features/onboarding/page1.dart';
+
 // Assuming you have an AuthModel for state management
 
 void main() {
@@ -31,7 +29,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 primarySwatch: Colors.blue,
               ),
-              home: SignUpScreen(),
+              home: const Page1(),
             ));
       },
     );
