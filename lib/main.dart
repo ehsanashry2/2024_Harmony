@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ocd/auth/screen_ui/signup.dart';
 
 import 'package:ocd/features/onboarding/page1.dart';
 import 'package:ocd/model/authModel/signup.dart';
@@ -22,16 +23,16 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return ChangeNotifierProvider(
-          create: (context) =>
-              SignUpModel(), // Initialize your state management model
-          child: MaterialApp(
+            create: (context) =>
+                SignUpModel(), // Initialize your state management model
+            child: MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
               theme: ThemeData(
                 primarySwatch: Colors.blue,
               ),
-              home: const Page1()),
-        );
+              home: SignUpScreen(),
+            ));
       },
     );
   }

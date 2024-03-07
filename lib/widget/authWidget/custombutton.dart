@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
     return Container(
       width: 310,
       margin: const EdgeInsets.only(
-        top: 5,
+        top: 40,
         left: 33,
         right: 33,
       ),
@@ -29,8 +29,9 @@ class CustomButton extends StatelessWidget {
           buttonText,
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            fontFamily: "WorkSans",
           ),
         ),
       ),

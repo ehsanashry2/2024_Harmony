@@ -22,7 +22,7 @@ class SignIn extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
-                  fontFamily: 'Urbanist',
+                  fontFamily: 'workSans',
                 ),
               ),
             )),
@@ -45,7 +45,7 @@ class SignIn extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(top: 10.0, left: 200.0),
               child: Text('Forgot my Password',
-                  style: TextStyle(color: Color(0xFF1A1A1A))),
+                  style: TextStyle(color: Color(0xFF1A1A1A), fontSize: 13.0)),
             ),
             const SizedBox(height: 20.0),
             CustomButton(
@@ -60,7 +60,7 @@ class SignIn extends StatelessWidget {
                 top: 10.0,
               ),
               child: Text("I don't have an account",
-                  style: TextStyle(color: Color(0xFF1A1A1A))),
+                  style: TextStyle(color: Color(0xFF1A1A1A), fontSize: 13.0)),
             ),
             const SizedBox(height: 20.0),
             const Text('Sign Up',

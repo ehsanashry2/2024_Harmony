@@ -28,13 +28,13 @@ class CustomTextField extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20, bottom: 10.0),
+            padding: const EdgeInsets.only(left: 20, top: 10.0),
             child: Text(
               fieldName,
               style: const TextStyle(
-                fontSize: 15,
+                fontSize: 20,
                 fontWeight: FontWeight.w500,
-                fontFamily: 'Urbanist',
+                fontFamily: 'WorkSans',
               ),
             ),
           ),

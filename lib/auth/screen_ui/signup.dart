@@ -23,8 +23,9 @@ class SignUpScreen extends StatelessWidget {
             height: 550,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
+
                 colors: [
                   Color(0xFFAA77FF),
                   Color(0xFFFFFFFF),
@@ -57,11 +58,10 @@ class SignUpScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w600,
-                    fontFamily: 'Urbanist',
+                    fontFamily: 'workSans',
                   ),
                 )),
                 const SizedBox(height: 40.0),
-
                 CustomTextField(
                   fieldName: 'Full Name',
                   onChanged: (value) => signUpModel.fullName = value,
@@ -78,25 +78,26 @@ class SignUpScreen extends StatelessWidget {
                   isPassword: true,
                   prefixIcon: Icons.lock,
                 ),
-
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Padding(
-                      padding: EdgeInsets.only(left: 10, bottom: 10.0),
+                      padding: EdgeInsets.only(left: 20, top: 10.0),
                       child: Text("Date of Birth",
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
-                            fontFamily: 'Urbanist',
+                            fontFamily: 'workSans',
                           )),
                     ),
                     Container(
                       width: 375.0, // Width of the text field
-                      height:
-                          60.0, // Height of the text field, adjust to your preference
+                      // Height of the text field, adjust to your preference
                       margin: const EdgeInsets.only(
-                          top: 1.0, left: 10.0), // Adjust positioning if needed
+                          top: 1.0,
+                          left: 20.0,
+                          right: 20,
+                          bottom: 10), // Adjust positioning if needed
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
                           begin: Alignment.topLeft,
@@ -157,25 +158,25 @@ class SignUpScreen extends StatelessWidget {
                     signUpModel.createAccount();
                   },
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: ElevatedButton(
-                //     onPressed: () {
-                //       // Here you would usually call a method on your SignUpModel to handle account creation
-                //       signUpModel.createAccount();
-                //     },
-                //     child: const Text('Sign Up'),
-                //   ),
-                // ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextButton(
                     onPressed: () {
                       // Navigator.push to sign in screen
                     },
-                    child: const Text('I already have an account, Sign in'),
+                    child: const Text(
+                      'I already have an account',
+                      style: TextStyle(
+                        color: Color(0xFF1A1A1A),
+                        fontSize: 13.0,
+                      ),
+                    ),
                   ),
                 ),
+                const Text("Sign In",
+                    style: TextStyle(
+                      color: Color(0xFFAA77FF),
+                    )),
               ],
             ),
           ),
