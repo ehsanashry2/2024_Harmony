@@ -20,11 +20,11 @@ class _Page1State extends State<Page1> {
           child: Container(
             width: double.infinity,
             height: 2700,
-            margin: const EdgeInsets.only(top: 430),
+            margin: const EdgeInsets.only(top: 250),
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                    "assets/images/2.png",
+                    "assets/images/1.png",
                   ),
                   fit: BoxFit.fill //fit: BoxFit.fill
                   ),
@@ -32,7 +32,7 @@ class _Page1State extends State<Page1> {
             child: Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 200),
+                  margin: const EdgeInsets.only(top: 50),
                   child: const Text(
                     "Welcome \n to your path to \n healing",
                     style: TextStyle(
