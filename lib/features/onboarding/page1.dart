@@ -20,7 +20,7 @@ class _Page1State extends State<Page1> {
           child: Container(
             width: double.infinity,
             height: 2700,
-            margin: const EdgeInsets.only(top: 250),
+            margin: const EdgeInsets.only(top: 169),
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
@@ -32,12 +32,12 @@ class _Page1State extends State<Page1> {
             child: Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 50),
+                  margin: const EdgeInsets.only( bottom: 100,top: 0),
                   child: const Text(
-                    "Welcome \n to your path to \n healing",
+                    "      Welcome \n to your path to \n       healing",
                     style: TextStyle(
                         color: Color(0xffAA77FF),
-                        fontSize: 60,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -52,7 +52,7 @@ class _Page1State extends State<Page1> {
                     },
                     icon: const Icon(
                       Icons.arrow_forward_ios_rounded,
-                      size: 70,
+                      size: 20,
                       color: Color(0xffAA77FF),
                     ),
                   ),

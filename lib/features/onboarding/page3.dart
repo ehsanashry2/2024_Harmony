@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/page4.dart';
+import 'package:ocd/survey/survey.dart';
 
 class Page3 extends StatefulWidget {
   const Page3({super.key});
@@ -11,44 +12,55 @@ class Page3 extends StatefulWidget {
 class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: 2700,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/3.png"),
-                fit: BoxFit.fill //fit: BoxFit.fill
-                )),
-        child: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 200),
-              child: const Text(
-                "Let’s Start \n Your \n Journey",
-                style: TextStyle(
-                    color: Color(0xffAA77FF),
-                    fontSize: 55,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 1300),
-              child: IconButton(
-                onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return const Page4();
-                  }));
-                },
-                icon: const Icon(
-                  Icons.keyboard_arrow_up_outlined,
-                  size: 70,
-                  color: Color(0xffAA77FF),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor:const Color(0xffDCC1FF),
+        body: SingleChildScrollView(
+          child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 100),
+                child: Text(
+                  "      Welcome \n to your path to \n        healing",
+                  style: TextStyle(
+                      color: Color(0xffAA77FF),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
-            )
-          ],
+              Container(
+                //color: const Color(0xffDCC1FF),
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height/1.5,
+                //margin: const EdgeInsets.only(top: 230),
+                decoration: const BoxDecoration(
+                  color: Color(0xffDCC1FF),
+                  image: DecorationImage(
+                      alignment: Alignment.bottomCenter,
+                      image: AssetImage("assets/images/3.png",),
+                      fit: BoxFit.fill //fit: BoxFit.fill
+                  ),
+                ),
+                child:Padding(
+                  padding:EdgeInsets.only(top:MediaQuery.of(context).size.height/2),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return const Page4();
+                      }));
+                    },
+                    icon: const Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      size: 50,
+                      color: Color(0xffAA77FF),
+                    ),
+                  ),
+                ),
+              ),
+
+            ],
+          ),
         ),
       ),
     );
