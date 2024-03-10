@@ -1,66 +1,116 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/features/onboarding/page2.dart';
-// ignore: unused_import
-import 'package:ocd/util/color.dart';
 
-class Page1 extends StatefulWidget {
-  const Page1({super.key});
+class onboarding extends StatelessWidget {
+  const onboarding({super.key});
 
-  @override
-  State<Page1> createState() => _Page1State();
-}
-
-class _Page1State extends State<Page1> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-          color: const Color(0xffDCC1FF),
-          child: Container(
-            width: double.infinity,
-            height: 2700,
-            margin: const EdgeInsets.only(top: 169),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                    "assets/images/1.png",
+    return Scaffold(
+      backgroundColor: const Color(0xFFE5D1FA),
+      body:  Column(
+        //mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 100,left: 50),
+                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+
+                      Text(
+                        '      Welcome \n to your path to \n        healing ',
+                        style: TextStyle(
+                          color: Color(0xFFAA77FF),
+                          fontSize: 30,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'workSans',
+                        ),
+                      ),
+                      Row(
+
+                        children: [
+                          IconButton(
+                            icon: Icon(Icons.double_arrow,color: Colors.white,size: 30,),
+                            onPressed: () {
+                              // Add your action here
+                            },
+                            padding: EdgeInsets.zero, // Remove padding
+                            // Alternatively, you can use margin: EdgeInsets.zero,
+                          ),
+
+
+                        ],
+
+
+
+
+                      )],
                   ),
-                  fit: BoxFit.fill //fit: BoxFit.fill
-                  ),
-            ),
-            child: Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only( bottom: 100,top: 0),
-                  child: const Text(
-                    "      Welcome \n to your path to \n       healing",
-                    style: TextStyle(
-                        color: Color(0xffAA77FF),
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 1300),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
-                        return const Page2();
-                      }));
-                    },
-                    icon: const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      size: 20,
-                      color: Color(0xffAA77FF),
+                )),
+            Expanded(
+              child: Stack(
+                  children: [SizedBox(width: double.infinity,
+                    height: double.infinity,
+                    child: const Image(
+                        width: double.infinity,
+                        image: AssetImage(
+                          'assets/images/1.png',
+                        ),
+                        fit: BoxFit.fill
                     ),
                   ),
-                )
-              ],
+
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 450),
+                        width: 99,
+                        height:99,
+                        decoration: BoxDecoration(
+
+                          shape: BoxShape.circle,
+                          color: Colors.transparent,
+                          border:Border.all(
+                              color: const Color(0xFF7D4DC3),
+                              width: 3
+
+                          ) ,// Outer circle color
+                        ),
+                        child: Center(
+                          child: Container(
+                            width: 77,
+                            height: 77,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Color(0xFFAA77FF),
+                                  Color(0xFFD932D2),
+                                ],
+                                stops: [0.1242, 0.8177],
+                              ),
+
+
+                            ),
+                            child: Container(
+                              child: Center(
+                                child: Icon(
+                                  Icons.arrow_forward_ios, // Your icon
+                                  color: Colors.white,
+
+                                ),
+
+
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),]
+
+              ),
             ),
-          ),
-        ),
+          ]
       ),
     );
   }

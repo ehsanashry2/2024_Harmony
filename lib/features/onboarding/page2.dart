@@ -1,68 +1,107 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/features/onboarding/page3.dart';
 
-class Page2 extends StatefulWidget {
-  const Page2({super.key});
+class onboarding2 extends StatelessWidget {
+  const onboarding2({super.key});
 
-  @override
-  State<Page2> createState() => _Page2State();
-}
-
-class _Page2State extends State<Page2> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor:const Color(0xffDCC1FF),
-        body: SingleChildScrollView(
-          child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 100),
-                child: Text(
-                  "      Welcome \n to your path to \n        healing",
-                  style: TextStyle(
-                      color: Color(0xffAA77FF),
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              Container(
-                //color: const Color(0xffDCC1FF),
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height/1.5,
-                //margin: const EdgeInsets.only(top: 230),
-                decoration: const BoxDecoration(
-                  color: Color(0xffDCC1FF),
-                  image: DecorationImage(
-                      alignment: Alignment.bottomCenter,
-                      image: AssetImage("assets/images/2.png",),
-                      fit: BoxFit.fill //fit: BoxFit.fill
+    return Scaffold(
+
+      backgroundColor: const Color(0xFFE3DFFD),
+      body:  Column(
+
+        //mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 170,left: 20,right: 30),
+                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+
+                      Text(
+                        '        You can track your \n   progress day by day and \n   challenge yourself with \n               daily tasks',
+                        style: TextStyle(
+                          color: Color(0xFFAA77FF),
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'workSans',
+                        ),
+                      ),
+
+                    ],
                   ),
-                ),
-                child:Padding(
-                  padding:EdgeInsets.only(top:MediaQuery.of(context).size.height/2),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
-                        return const Page3();
-                      }));
-                    },
-                    icon: const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      size: 70,
-                      color: Color(0xffAA77FF),
+                )),
+            Expanded(
+              child: Stack(
+                  children: [SizedBox(width: 424,
+                    height:624,
+
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 120),
+                      child: const Image(
+                          width: 424,
+                          height: 624,
+                          image: AssetImage(
+                            'assets/images/2.png',
+                          ),
+                          fit: BoxFit.fill
+                      ),
                     ),
                   ),
-                ),
-              ),
 
-            ],
-          ),
-        ),
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 345),
+                        width: 99,
+                        height:99,
+                        decoration: BoxDecoration(
+
+                          shape: BoxShape.circle,
+                          color: Colors.transparent,
+                          border:Border.all(
+                              color: const Color(0xFF7D4DC3),
+                              width: 3
+
+                          ) ,// Outer circle color
+                        ),
+                        child: Center(
+                          child: Container(
+                            width: 77,
+                            height: 77,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Color(0xFFAA77FF),
+                                  Color(0xFFD932D2),
+                                ],
+                                stops: [0.1242, 0.8177],
+                              ),
+
+
+                            ),
+                            child: Container(
+                              child: Center(
+                                child: Icon(
+                                  Icons.arrow_forward_ios, // Your icon
+                                  color: Colors.white,
+
+                                ),
+
+
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),]
+
+              ),
+            ),
+          ]
       ),
     );
-
   }
 }

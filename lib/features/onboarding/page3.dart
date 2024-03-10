@@ -1,70 +1,106 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/page4.dart';
-//import 'package:ocd/survey/survey.dart';
 
-class Page3 extends StatefulWidget {
-  const Page3({super.key});
+class onboarding3 extends StatelessWidget {
+  const onboarding3({super.key});
 
-  @override
-  State<Page3> createState() => _Page3State();
-}
-
-class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: const Color(0xffDCC1FF),
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 100),
-                child: Text(
-                  "      Welcome \n to your path to \n        healing",
-                  style: TextStyle(
-                      color: Color(0xffAA77FF),
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              Container(
-                //color: const Color(0xffDCC1FF),
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 1.5,
-                //margin: const EdgeInsets.only(top: 230),
-                decoration: const BoxDecoration(
-                  color: Color(0xffDCC1FF),
-                  image: DecorationImage(
-                      alignment: Alignment.bottomCenter,
-                      image: AssetImage(
-                        "assets/images/3.png",
-                      ),
-                      fit: BoxFit.fill //fit: BoxFit.fill
-                      ),
-                ),
+    return Scaffold(
+
+      backgroundColor: const Color(0xFFECF2FF),
+      body:  Column(
+
+        //mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Center(
                 child: Padding(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 2),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
-                        return const Page4();
-                      }));
-                    },
-                    icon: const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      size: 50,
-                      color: Color(0xffAA77FF),
+                  padding: const EdgeInsets.only(top: 150,left: 20,right: 30),
+                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+
+                      Text(
+                        '  Let’s Start \n        Your \n    Journey',
+                        style: TextStyle(
+                          color: Color(0xFFAA77FF),
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'workSans',
+                        ),
+                      ),
+
+                    ],
+                  ),
+                )),
+            Expanded(
+              child: Stack(
+                  children: [SizedBox(width: 622,
+                    height:752,
+
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 50),
+                      child: const Image(
+                          width: 622,
+                          height: 752,
+                          image: AssetImage(
+                            'assets/images/3.png',
+                          ),
+                          fit: BoxFit.fill
+                      ),
                     ),
                   ),
-                ),
+
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 345),
+                        width: 99,
+                        height:99,
+                        decoration: BoxDecoration(
+
+                          shape: BoxShape.circle,
+                          color: Colors.transparent,
+                          border:Border.all(
+                              color: const Color(0xFF7D4DC3),
+                              width: 3
+
+                          ) ,// Outer circle color
+                        ),
+                        child: Center(
+                          child: Container(
+                            width: 77,
+                            height: 77,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Color(0xFFAA77FF),
+                                  Color(0xFFD932D2),
+                                ],
+                                stops: [0.1242, 0.8177],
+                              ),
+
+
+                            ),
+                            child: Container(
+                              child: Center(
+                                child: Icon(
+                                  Icons.arrow_forward_ios, // Your icon
+                                  color: Colors.white,
+
+                                ),
+
+
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),]
+
               ),
-            ],
-          ),
-        ),
+            ),
+          ]
       ),
     );
   }
