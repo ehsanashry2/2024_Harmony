@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/auth/screen_ui/home.dart';
+
+import 'package:ocd/screens/home.dart';
 import 'package:ocd/widget/authWidget/custombutton.dart';
 import 'package:ocd/widget/authWidget/customtextfield.dart';
 

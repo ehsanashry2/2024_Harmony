@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ocd/features/onboarding/page1.dart';
+import 'package:ocd/screens/survey/congratulations.dart';
+import 'package:ocd/screens/survey/survey.dart';
+//import 'package:ocd/features/onboarding/page1.dart';
+
+//import 'package:ocd/survey/survey.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,13 +22,12 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: const Page1(),
-        );
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            home: const Congratulations());
       },
     );
   }
