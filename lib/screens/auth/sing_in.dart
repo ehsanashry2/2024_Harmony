@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ocd/screens/auth/final1.dart';
 
-import 'package:ocd/screens/home.dart';
+//import 'package:ocd/screens/home.dart';
+//import 'package:ocd/screens/survey/survey.dart';
 import 'package:ocd/widget/authWidget/custombutton.dart';
 import 'package:ocd/widget/authWidget/customtextfield.dart';
 
@@ -53,7 +55,7 @@ class SignIn extends StatelessWidget {
               buttonText: 'Sign In',
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Home()));
+                    MaterialPageRoute(builder: (context) => const Sona()));
               },
             ),
             const Padding(

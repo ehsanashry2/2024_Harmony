@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/model/authModel/signup.dart';
+import 'package:ocd/screens/auth/final1.dart';
 import 'package:ocd/util/font_style.dart';
 import 'package:ocd/widget/authWidget/custombutton.dart';
 import 'package:ocd/widget/authWidget/customtextfield.dart';
@@ -7,7 +8,9 @@ import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
 class SignUpScreen extends StatelessWidget {
-  late final font = urbanistHeadTitle;
+  final font = urbanistHeadTitle;
+
+  SignUpScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final signUpModel = Provider.of<SignUpModel>(context);
@@ -62,9 +65,9 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 )),
                 const SizedBox(height: 40.0),
-                CustomTextField(
+                const CustomTextField(
                   fieldName: 'Full Name',
-                  onChanged: (value) => signUpModel.fullName = value,
+                  //onChanged: (value) => signUpModel.fullName = value,
                   prefixIcon: Icons.person,
                 ),
                 CustomTextField(
@@ -72,9 +75,9 @@ class SignUpScreen extends StatelessWidget {
                   onChanged: (value) => signUpModel.email = value,
                   prefixIcon: Icons.email,
                 ),
-                CustomTextField(
+                const CustomTextField(
                   fieldName: 'Password',
-                  onChanged: (value) => signUpModel.password = value,
+                  //onChanged: (value) => signUpModel.password = value,
                   isPassword: true,
                   prefixIcon: Icons.lock,
                 ),
@@ -155,7 +158,10 @@ class SignUpScreen extends StatelessWidget {
                 CustomButton(
                   buttonText: 'Sign Up',
                   onPressed: () {
-                    signUpModel.createAccount();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Sona()),
+                    );
                   },
                 ),
                 Padding(
