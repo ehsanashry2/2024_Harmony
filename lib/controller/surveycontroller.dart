@@ -19,13 +19,13 @@ OCDLevel calculateLevel(List<int> scores) {
   int totalScore = scores.reduce((value, element) => value + element);
 
   if (totalScore >= 0 && totalScore <= 7) {
-    return OCDLevel.None;
+    return OCDLevel.none;
   } else if (totalScore >= 8 && totalScore <= 15) {
-    return OCDLevel.Mild;
+    return OCDLevel.mild;
   } else if (totalScore >= 16 && totalScore <= 23) {
-    return OCDLevel.Moderate;
+    return OCDLevel.moderate;
   } else {
-    return OCDLevel.Severe;
+    return OCDLevel.severe;
   }
 }
 

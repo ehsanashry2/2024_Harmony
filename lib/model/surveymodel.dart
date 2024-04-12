@@ -21,10 +21,10 @@ class SurveyOption {
 }
 
 enum OCDLevel {
-  None,
-  Mild,
-  Moderate,
-  Severe,
+  none,
+  mild,
+  moderate,
+  severe,
 }
 
 // List<SurveyQuestion> surveyQuestions = [

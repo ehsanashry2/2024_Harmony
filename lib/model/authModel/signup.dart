@@ -7,6 +7,7 @@ class SignUpModel extends ChangeNotifier {
 
   late String password;
 
+  // ignore: prefer_typing_uninitialized_variables
   var dateOfBirth;
 
   // Getters and setters for each field

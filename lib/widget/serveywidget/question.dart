@@ -18,9 +18,9 @@ class Question extends StatelessWidget {
             padding: const EdgeInsets.all(2),
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0xffDCC1FF),
+                color: const Color(0xffDCC1FF),
                 borderRadius: BorderRadius.circular(6.0),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Color(0xffAA77FF),
                     offset: Offset(0, 1),
