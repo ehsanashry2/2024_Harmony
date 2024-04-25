@@ -163,6 +163,9 @@ class SignUpScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Sona()),
                     );
                   },
+                  topMargin: 40,
+                  leftMargin: 33,
+                  rightMargin: 33,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),

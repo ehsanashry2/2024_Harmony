@@ -57,6 +57,9 @@ class SignIn extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Sona()));
               },
+              topMargin: 44,
+              leftMargin: 33.0,
+              rightMargin: 33.0,
             ),
             const Padding(
               padding: EdgeInsets.only(

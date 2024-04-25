@@ -3,7 +3,7 @@ import 'package:ocd/model/surveymodel.dart';
 
 class Buttomservey extends StatelessWidget {
   final List<SurveyOption> options;
-  final void Function() onPressed;
+  final Function(int) onPressed;
 
   const Buttomservey({
     Key? key,
@@ -21,7 +21,7 @@ class Buttomservey extends StatelessWidget {
         itemBuilder: (context, index) {
           final option = options[index];
           return GestureDetector(
-            onTap: onPressed,
+            onTap: () => onPressed(option.score),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(

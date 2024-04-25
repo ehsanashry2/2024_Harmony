@@ -4,12 +4,32 @@ import 'package:ocd/screens/survey/congratulations.dart';
 
 class SurveyController extends GetxController {
   List<SurveyQuestion> surveyquestions = surveyQuestions;
-  int currentQuestionIndex = 0;
-  changeIndex() {
-    currentQuestionIndex != 9
-        ? currentQuestionIndex++
-        : Get.to(() => const Congratulations());
+  RxInt currentQuestionIndex = 0.obs;
+  void onOptionSelected(int selectedScore) {
+    changeIndex(selectedScore);
+  }
+
+  void changeIndex(int score) {
+    print("Score received: $score");
+    if (currentQuestionIndex.value < surveyQuestions.length - 1) {
+      userScores[currentQuestionIndex.value] = score;
+      print("Updated score for question ${currentQuestionIndex.value}: $score");
+      currentQuestionIndex.value++; // Increment the RxInt using .value
+    } else {
+      // Last question answered, calculate result
+      calculateResult();
+    }
     update();
+  }
+
+  void calculateResult() {
+    print("All Scores: $userScores");
+    OCDLevel level = calculateLevel(userScores);
+    // Use Get to navigate to a result page or show in current page
+    // Pass the result to the next page or display a dialog
+    print(
+        'Your OCD Level is: ${level.toString().split('.').last}'); // For console output
+    Get.to(() => Congratulations(level: level)); // Navigate to result page
   }
 }
 
@@ -19,13 +39,13 @@ OCDLevel calculateLevel(List<int> scores) {
   int totalScore = scores.reduce((value, element) => value + element);
 
   if (totalScore >= 0 && totalScore <= 7) {
-    return OCDLevel.None;
+    return OCDLevel.none;
   } else if (totalScore >= 8 && totalScore <= 15) {
-    return OCDLevel.Mild;
+    return OCDLevel.mild;
   } else if (totalScore >= 16 && totalScore <= 23) {
-    return OCDLevel.Moderate;
+    return OCDLevel.moderate;
   } else {
-    return OCDLevel.Severe;
+    return OCDLevel.severe;
   }
 }
 

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ocd/model/surveymodel.dart';
 //import 'package:flutter/widgets.dart';
 import 'package:ocd/widget/authWidget/custombutton.dart';
 
 class Congratulations extends StatelessWidget {
-  const Congratulations({super.key});
+  final OCDLevel level;
+  const Congratulations({super.key, required this.level});
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +64,43 @@ class Congratulations extends StatelessWidget {
                     // height: 190,
                   ),
                 ),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 450,
+                  ),
+                  decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(0, 0, 0, 0.25),
+                        blurRadius: 20,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: CustomButton(
+                    buttonText: "Show Result",
+                    onPressed: () => _showAlert(context),
+                    topMargin: 0,
+                    leftMargin: 33.0,
+                    rightMargin: 33.0,
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 530,
+                    left: 130,
+                  ),
+                  child: const Text(
+                    'Go to home',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "WorkSans",
+                    ),
+                  ),
+                ),
               ]),
-              CustomButton(
-                  buttonText: "Show Result",
-                  onPressed: () => _showAlert(context))
             ],
           ),
         ));
@@ -77,8 +112,10 @@ class Congratulations extends StatelessWidget {
         builder: (BuildContext context) {
           // return object of type Dialog
           return AlertDialog(
+            backgroundColor: Colors.white,
             title: const Text("Alert!"),
-            content: const Text("You have pressed the button."),
+            content:
+                Text("Your OCD Level is: ${level.toString().split('.').last}"),
             actions: <Widget>[
               TextButton(
                 child: const Text("Close"),

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:ocd/screens/discover.dart';
+
 //import 'package:ocd/features/onboarding/page1.dart';
 //import 'package:ocd/screens/auth/signup.dart';
 //import 'package:ocd/screens/auth/sing_in.dart';
 import 'package:ocd/screens/survey/congratulations.dart';
+import 'package:ocd/screens/survey/survey.dart';
 //import 'package:ocd/screens/survey/survey.dart';
 
 void main() {
@@ -21,13 +25,14 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
+          navigatorKey: Get.key,
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: const Congratulations(),
+          home: const Discover(),
         );
       },
     );
