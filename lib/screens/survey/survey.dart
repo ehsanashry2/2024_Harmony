@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ocd/controller/surveycontroller.dart';
 import 'package:ocd/widget/serveywidget/customsurveybutton.dart';
-//import 'package:ocd/model/surveymodel.dart';
+import 'package:ocd/model/surveymodel.dart';
 import 'package:ocd/widget/serveywidget/question.dart';
 import '../../widget/serveywidget/buttomsurvey.dart';
 

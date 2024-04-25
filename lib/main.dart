@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ocd/screens/home/Home/Home.dart';
+import 'package:ocd/screens/home/home1.dart';
 //import 'package:ocd/features/onboarding/page1.dart';
 //import 'package:ocd/screens/auth/signup.dart';
 //import 'package:ocd/screens/auth/sing_in.dart';
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: const Congratulations(),
+          home: Home(),
         );
       },
     );
