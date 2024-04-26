@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 //import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:ocd/widget/discover/catogrybutton.dart';
+import 'package:ocd/widget/discover/customlistview.dart';
 
 class Discover extends StatelessWidget {
   const Discover({super.key});
@@ -14,14 +15,14 @@ class Discover extends StatelessWidget {
     // double gridHeight = MediaQuery.of(context).size.height *
     //     0.2; // Adjust grid height as needed
     List<List<Color>> buttonColors = [
-      [
-        const Color(0xFFBDA7DA),
-        const Color(0xFF9575CD)
-      ], // Gradient for AI Therapist
-      [
-        const Color(0xFFFAD0C4),
-        const Color(0xFFF76B8A)
-      ], // Gradient for Life Style
+      [const Color(0xFFE5D1FA), const Color(0xFFBA68C8)],
+      [const Color(0xFFE5D1FA), const Color(0xFFBA68C8)],
+      [const Color(0xFFE3DFFD), const Color(0xFFA99CF9)],
+      [const Color(0xFFE3DFFD), const Color(0xFFA99CF9)],
+      [const Color(0xFFECF2FF), const Color(0xFFC4D6FF)],
+      [const Color(0xFFECF2FF), const Color(0xFFC4D6FF)],
+      // Gradient for AI Therapist
+      // Gradient for Life Style
       // ... Define gradients for other categories
     ];
 
@@ -40,22 +41,22 @@ class Discover extends StatelessWidget {
       {
         'label': 'Breath',
         'imagePath': 'assets/images/breath.png',
-        'colors': buttonColors[1]
+        'colors': buttonColors[2]
       },
       {
         'label': 'Podcasts',
         'imagePath': 'assets/images/podcastes.png',
-        'colors': buttonColors[1]
+        'colors': buttonColors[3]
       },
       {
         'label': 'Articles',
         'imagePath': 'assets/images/Articles.png',
-        'colors': buttonColors[1]
+        'colors': buttonColors[4]
       },
       {
         'label': 'Games',
         'imagePath': 'assets/images/games.png',
-        'colors': buttonColors[1]
+        'colors': buttonColors[5]
       },
     ];
 
@@ -73,18 +74,20 @@ class Discover extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Container(
-              margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
+              margin: const EdgeInsets.only(left: 20, right: 20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),
+                borderRadius: BorderRadius.circular(10),
                 color:
                     const Color(0xFFF6F2FF), // Use the desired background color
               ),
-              child: const TextField(
+              child: TextField(
                 decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10), // Adjust padding as needed
                   hintText:
                       'Search for Podcasts , Articles and Games', // Placeholder text
                   // Placeholder text
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     color: Colors.grey, // Adjust hint text color as needed
                     fontFamily: 'WorkSans', // Use the desired font family
                     fontSize: 13.0, // Use the desired font size
@@ -92,36 +95,43 @@ class Discover extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                   border: InputBorder.none, // Hide the default border
-                  contentPadding: EdgeInsets.symmetric(
-                      horizontal: 20), // Adjust padding as needed
-                  prefixIcon: Icon(
-                    Icons.search_outlined, // Use the desired search icon
-                    color: Colors.grey, // Adjust icon color as needed
+                  // Adjust padding as needed
+                  prefixIcon: IconButton(
+                    color: Colors.white, // Adjust icon color as needed
+                    onPressed: () {}, // Add search functionality as needed
+                    icon: const Icon(
+                      Icons.search_outlined, // Use the desired search icon
+                      color: Colors.grey, // Adjust icon color as needed
+                    ),
                   ),
                 ),
               ),
             ),
-            Expanded(
-              child: GridView.builder(
-                itemCount: categories.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: (1 / 1),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+              child: SizedBox(
+                height: 200,
+                child: GridView.builder(
+                  itemCount: categories.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: (1 / 1),
+                    mainAxisExtent: 60,
+                  ),
+                  itemBuilder: (context, index) {
+                    var category = categories[index];
+                    return CategoryButton(
+                      label: category['label'],
+                      imagePath: category['imagePath'],
+                      gradientColors: category['colors'],
+                    );
+                  },
                 ),
-                itemBuilder: (context, index) {
-                  var category = categories[index];
-                  return CategoryButton(
-                    label: category['label'],
-                    imagePath: category['imagePath'],
-                    gradientColors: category['colors'],
-                    width: 30, // 40% of screen width
-                    height: 30,
-                  );
-                },
               ),
             ),
+            HorizontalListView1(),
           ],
         ));
   }
