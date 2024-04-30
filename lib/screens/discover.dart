@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-//import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:flutter/material.dart'; //import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:ocd/widget/discover/catogrybutton.dart';
 import 'package:ocd/widget/discover/customlistview.dart';
+import 'package:ocd/widget/discover/customlistview2.dart';
 
 class Discover extends StatelessWidget {
   const Discover({super.key});
@@ -72,6 +70,7 @@ class Discover extends StatelessWidget {
           ),
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
               margin: const EdgeInsets.only(left: 20, right: 20),
@@ -131,7 +130,30 @@ class Discover extends StatelessWidget {
                 ),
               ),
             ),
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text(
+                "Popular ",
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "WorkSans",
+                ),
+              ),
+            ),
             HorizontalListView1(),
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text(
+                "Programs",
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "WorkSans",
+                ),
+              ),
+            ),
+            HorizontalListView2()
           ],
         ));
   }

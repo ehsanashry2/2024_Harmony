@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:ocd/screens/discover.dart';
+import 'package:ocd/screens/home/Home/layoutscreen.dart';
 
 //import 'package:ocd/features/onboarding/page1.dart';
 //import 'package:ocd/screens/auth/signup.dart';
 //import 'package:ocd/screens/auth/sing_in.dart';
-import 'package:ocd/screens/survey/congratulations.dart';
-import 'package:ocd/screens/survey/survey.dart';
+
 //import 'package:ocd/screens/survey/survey.dart';
 
 void main() {
@@ -26,14 +25,10 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return GetMaterialApp(
-          navigatorKey: Get.key,
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: const Discover(),
-        );
+            navigatorKey: Get.key,
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            home: LayOutScreen());
       },
     );
   }

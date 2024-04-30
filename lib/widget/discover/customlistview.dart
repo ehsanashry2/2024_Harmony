@@ -18,8 +18,8 @@ class HorizontalListView1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(
-          vertical: 20.0), // Adjust the height as needed
+      height: 150,
+      width: 400, // Adjust the height as needed
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
@@ -30,7 +30,9 @@ class HorizontalListView1 extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Image.asset(
                   items[index]['imagePath'],
-                  fit: BoxFit.fill, // This can be changed to fit your layout
+                  fit: BoxFit.fill,
+                  // width: 80,
+                  // height: 50, // This can be changed to fit your layout
                 ),
               ),
               Text(
