@@ -95,13 +95,13 @@ class _LifeStyleCateState extends State<LifeStyleCate> {
             ],
           ),
         ),
-        GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, childAspectRatio: 1.5)
-                itemBuilder:(context, index) {
-                  
-                },
-                )
+        // GridView.builder(
+        //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //         crossAxisCount: 2, childAspectRatio: 1.5)
+        //         itemBuilder:(context, index) {
+
+        //         },
+        //         )
       ]),
     );
   }
