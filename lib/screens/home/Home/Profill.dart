@@ -7,31 +7,26 @@ import '../../auth/sing_in.dart';
 class Profil extends StatefulWidget {
   const Profil({super.key});
 
-
-
   @override
   State<Profil> createState() => _ProfilState();
 }
 
 class _ProfilState extends State<Profil> {
-  final double coverHeight =160;
-  final double ProfileHeight =110;
+  final double coverHeight = 160;
+  final double ProfileHeight = 110;
   @override
   Widget build(BuildContext context) {
-    final top = coverHeight - ProfileHeight /2;
+    final top = coverHeight - ProfileHeight / 2;
     return Scaffold(
       body: Column(
         children: [
           Stack(
             clipBehavior: Clip.none,
             alignment: Alignment.center,
-            children:[
+            children: [
               buildCoverImage(),
-              Positioned
-                ( top: top,
-                  child: buildProfileImage()),
+              Positioned(top: top, child: buildProfileImage()),
             ],
-
           ),
           Container(
             padding: EdgeInsets.only(top: 100),
@@ -53,15 +48,22 @@ class _ProfilState extends State<Profil> {
                     indent: 0.0,
                     endIndent: 0.0,
                   ),
-                  SizedBox(height: 15,),
-                  _buildTextField(labelText: 'Notification', icon: Icons.notification_important, suffixIcon: Icons.toggle_off_outlined),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  _buildTextField(
+                      labelText: 'Notification',
+                      icon: Icons.notification_important,
+                      suffixIcon: Icons.toggle_off_outlined),
                   Divider(
                     color: Colors.grey,
                     thickness: 1.0,
                     indent: 5.0,
                     endIndent: 5.0,
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(
+                    height: 15,
+                  ),
                   _buildTextField(
                     labelText: 'Edit profile',
                     icon: Icons.person,
@@ -73,9 +75,10 @@ class _ProfilState extends State<Profil> {
                     indent: 5.0,
                     endIndent: 5.0,
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(
+                    height: 15,
+                  ),
                   GestureDetector(
-
                     onTap: () {
                       showDialog(
                         context: context,
@@ -85,9 +88,7 @@ class _ProfilState extends State<Profil> {
                             filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                             child: AlertDialog(
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)
-
-                              ),
+                                  borderRadius: BorderRadius.circular(20)),
                               contentPadding: EdgeInsets.zero,
                               content: Container(
                                 width: 300,
@@ -117,15 +118,15 @@ class _ProfilState extends State<Profil> {
                                     ),
                                     SizedBox(height: 40),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
                                       children: [
                                         Container(
-
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(8),
-                                            border: Border.all(
-                                                color: Colors.white
-                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            border:
+                                                Border.all(color: Colors.white),
                                             gradient: LinearGradient(
                                               begin: Alignment.topCenter,
                                               end: Alignment.bottomCenter,
@@ -137,12 +138,13 @@ class _ProfilState extends State<Profil> {
                                           ),
                                           width: 130,
                                           height: 42,
-
                                           child: ElevatedButton(
                                             onPressed: () {
                                               Navigator.push(
                                                 context,
-                                                MaterialPageRoute(builder: (context) =>  SignIn()),
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        SignIn()),
                                               );
                                             },
                                             child: Text(
@@ -155,15 +157,17 @@ class _ProfilState extends State<Profil> {
                                               ),
                                             ),
                                             style: ElevatedButton.styleFrom(
-                                                primary:  Colors.transparent
-                                            ),
+                                                backgroundColor:
+                                                    Colors.transparent),
                                           ),
                                         ),
                                         ElevatedButton(
                                           onPressed: () {
                                             Navigator.push(
                                               context,
-                                              MaterialPageRoute(builder: (context) => Profil()),
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Profil()),
                                             );
                                           },
                                           child: Row(
@@ -171,7 +175,6 @@ class _ProfilState extends State<Profil> {
                                               SizedBox(width: 8),
                                               Container(
                                                 color: Colors.white,
-
                                                 child: Text(
                                                   "Stay logged in",
                                                   style: TextStyle(
@@ -185,7 +188,8 @@ class _ProfilState extends State<Profil> {
                                             ],
                                           ),
                                           style: ElevatedButton.styleFrom(
-                                            primary: Colors.white, // لون خلفية الزر
+                                            backgroundColor:
+                                                Colors.white, // لون خلفية الزر
                                           ),
                                         ),
                                       ],
@@ -197,7 +201,6 @@ class _ProfilState extends State<Profil> {
                           );
                         },
                       );
-
                     },
                     child: Row(
                       children: [
@@ -215,65 +218,55 @@ class _ProfilState extends State<Profil> {
                       ],
                     ),
                   ),
-
                   const SizedBox(height: 24.0),
                 ],
               ),
-
-
-
-
             ),
           ),
         ],
       ),
-
     );
   }
-  Widget buildCoverImage()=>Container(
-    width: double.infinity,
-    height: 160,
-    color: Color(0xFFE5D1FA),
 
-
-  );
+  Widget buildCoverImage() => Container(
+        width: double.infinity,
+        height: 160,
+        color: Color(0xFFE5D1FA),
+      );
 
   Widget buildProfileImage() => Column(
-    children: [
-      Container(
-        decoration: BoxDecoration(
-          border: Border.all(width: 4, color: Colors.white),
-          boxShadow: [
-            BoxShadow(
-              spreadRadius: 4,
-              blurRadius: 15,
-              color: Colors.black.withOpacity(0.1),
-            )
-          ],
-          shape: BoxShape.circle,
-        ),
-        child: Image.asset(
-          "assets/images/imageprofill.png",
-          width: ProfileHeight,
-          height: ProfileHeight,
-          fit: BoxFit.cover,
-        ),
-      ),
-      SizedBox(height: 8),
-      Text(
-        "Omar Ahmed",
-        style: TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.w600,
-          fontFamily: 'workSans',
-          fontSize: 20,
-        ),
-      ),
-    ],
-  );
-
-
-
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(width: 4, color: Colors.white),
+              boxShadow: [
+                BoxShadow(
+                  spreadRadius: 4,
+                  blurRadius: 15,
+                  color: Colors.black.withOpacity(0.1),
+                )
+              ],
+              shape: BoxShape.circle,
+            ),
+            child: Image.asset(
+              "assets/images/imageprofill.png",
+              width: ProfileHeight,
+              height: ProfileHeight,
+              fit: BoxFit.cover,
+            ),
+          ),
+          SizedBox(height: 8),
+          Text(
+            "Omar Ahmed",
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'workSans',
+              fontSize: 20,
+            ),
+          ),
+        ],
+      );
 
   Widget _buildTextField({
     required String labelText,
@@ -322,7 +315,6 @@ class _ProfilState extends State<Profil> {
               iconSize: 25,
               icon: Icon(suffixIcon),
               onPressed: () {
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Editprofill()),
@@ -333,7 +325,4 @@ class _ProfilState extends State<Profil> {
       ),
     );
   }
-
-
-
 }
