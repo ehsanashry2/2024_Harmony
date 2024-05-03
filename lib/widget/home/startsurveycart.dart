@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../screens/survey/survey.dart';
-
 class SurveyCart extends StatelessWidget {
   const SurveyCart({super.key});
 
@@ -40,11 +38,11 @@ class SurveyCart extends StatelessWidget {
           ),
           //),
           const Padding(
-            padding: EdgeInsets.only(top:25),
+            padding: EdgeInsets.all(8.0),
             child: Text(
-              "Are you suffering from OCD?\nHelp us improve your condition\nby completing our survey.",
+              "Are you suffering from OCD?\n Help us improve your condition\n by completing our survey.",
               style: TextStyle(
-                fontSize: 13.6,
+                fontSize: 16,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'WorkSans',
                 color: Colors.black,
@@ -58,14 +56,9 @@ class SurveyCart extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15) // Outer circle color
-            ),
+                ),
             child: TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Survey()),
-                );
-              },
+              onPressed: () {},
               child: const Text(
                 'Start Survey',
                 style: TextStyle(

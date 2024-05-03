@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ocd/controller/surveycontroller.dart';
 import 'package:ocd/widget/serveywidget/customsurveybutton.dart';
-import 'package:ocd/model/surveymodel.dart';
 import 'package:ocd/widget/serveywidget/question.dart';
 import '../../widget/serveywidget/buttomsurvey.dart';
 
@@ -37,7 +36,7 @@ class Survey extends StatelessWidget {
                   padding: const EdgeInsets.all(5.0),
                   child: Question(
                     questions: controller
-                        .surveyquestions[controller.currentQuestionIndex]
+                        .surveyquestions[controller.currentQuestionIndex.value]
                         .question,
                   ),
                 )),
@@ -45,7 +44,8 @@ class Survey extends StatelessWidget {
                     surveyQuestions.length - 1)
                   Image(
                       image: AssetImage(controller
-                              .surveyquestions[controller.currentQuestionIndex]
+                              .surveyquestions[
+                                  controller.currentQuestionIndex.value]
                               .imagePath ??
                           ''),
                       width: 190,
@@ -53,9 +53,11 @@ class Survey extends StatelessWidget {
                       fit: BoxFit.fill),
                 Buttomservey(
                   options: controller
-                      .surveyquestions[controller.currentQuestionIndex].options,
-                  onPressed: () {
-                    controller.changeIndex();
+                      .surveyquestions[controller.currentQuestionIndex.value]
+                      .options,
+                  onPressed: (score) {
+                    controller.changeIndex(
+                        score); // Correctly pass the selected option's score
                   },
                 ),
                 if (controller.currentQuestionIndex ==

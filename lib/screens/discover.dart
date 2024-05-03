@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart'; //import 'package:get/get_connect/http/src/utils/utils.dart';
-
+import 'package:ocd/widget/discover/catogrybutton.dart';
 import 'package:ocd/widget/discover/customlistview.dart';
 import 'package:ocd/widget/discover/customlistview2.dart';
-
-import '../widget/discover/categorybutton.dart';
 
 class Discover extends StatelessWidget {
   const Discover({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     List<List<Color>> buttonColors = [
       [const Color(0xFFE5D1FA), const Color(0xFFBA68C8)],
       [const Color(0xFFE5D1FA), const Color(0xFFBA68C8)],
@@ -47,7 +44,7 @@ class Discover extends StatelessWidget {
       },
       {
         'label': 'Articles',
-        'imagePath': 'assets/images/articlesss.png',
+        'imagePath': 'assets/images/Articles.png',
         'colors': buttonColors[4]
       },
       {
@@ -58,9 +55,8 @@ class Discover extends StatelessWidget {
     ];
 
     return Scaffold(
-
         body: Padding(
-          padding: const EdgeInsets.only(top: 70.0,left: 9),
+          padding: const EdgeInsets.only(top: 70.0, left: 9),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -82,18 +78,24 @@ class Discover extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.symmetric(
-                        vertical: 10), // Adjust padding as needed
+                        vertical: 10),
+                    // Adjust padding as needed
                     hintText:
-                    'Search for Podcasts , Articles and Games', // Placeholder text
+                    'Search for Podcasts , Articles and Games',
+                    // Placeholder text
                     // Placeholder text
                     hintStyle: const TextStyle(
-                      color: Colors.grey, // Adjust hint text color as needed
-                      fontFamily: 'WorkSans', // Use the desired font family
-                      fontSize: 13.0, // Use the desired font size
+                      color: Colors.grey,
+                      // Adjust hint text color as needed
+                      fontFamily: 'WorkSans',
+                      // Use the desired font family
+                      fontSize: 13.0,
+                      // Use the desired font size
                       fontStyle: FontStyle.normal,
                       fontWeight: FontWeight.w400,
                     ),
-                    border: InputBorder.none, // Hide the default border
+                    border: InputBorder.none,
+                    // Hide the default border
                     // Adjust padding as needed
                     prefixIcon: IconButton(
                       color: Colors.white, // Adjust icon color as needed
@@ -107,7 +109,7 @@ class Discover extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only( left: 9, right: 3),
+                padding: const EdgeInsets.only(left: 9, right: 3),
                 child: SizedBox(
                   height: 250,
                   child: GridView.builder(
@@ -131,7 +133,7 @@ class Discover extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(left: 10,top: 15),
+                padding: EdgeInsets.only(left: 10, top: 15),
                 child: Text(
                   "Popular ",
                   style: TextStyle(
@@ -157,5 +159,4 @@ class Discover extends StatelessWidget {
             ],
           ),
         ));
-  }
-}
+  }}

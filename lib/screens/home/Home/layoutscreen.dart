@@ -3,7 +3,6 @@ import 'package:ocd/screens/discover.dart';
 import 'package:ocd/screens/home/Home/Homepage.dart';
 import 'package:ocd/screens/home/Home/Profill.dart';
 
-
 class LayOutScreen extends StatefulWidget {
   const LayOutScreen({Key? key}) : super(key: key);
 
@@ -16,17 +15,14 @@ class _LayOutScreenState extends State<LayOutScreen> {
 
   final pages = [
     const HomePage(),
-
     const Discover(),
     const Profil(),
-
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
-
       body: pages[pageIndex],
       bottomNavigationBar: buildMyNavBar(context),
     );
@@ -36,7 +32,6 @@ class _LayOutScreenState extends State<LayOutScreen> {
     return Container(
       height: 60,
       decoration: BoxDecoration(
-
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
@@ -53,19 +48,16 @@ class _LayOutScreenState extends State<LayOutScreen> {
                 });
               },
               icon: pageIndex == 0
-                  ?Image.asset(
-                "assets/images/home.png",
-                width: 35,
-                height: 35,
-
-              )
+                  ? Image.asset(
+                      "assets/images/home.png",
+                      width: 35,
+                      height: 35,
+                    )
                   : Image.asset(
-                "assets/images/home grey.png",
-                width: 35,
-                height: 35,
-
-              )
-          ),
+                      "assets/images/home grey.png",
+                      width: 35,
+                      height: 35,
+                    )),
           IconButton(
               enableFeedback: false,
               onPressed: () {
@@ -75,18 +67,15 @@ class _LayOutScreenState extends State<LayOutScreen> {
               },
               icon: pageIndex == 1
                   ? Image.asset(
-                "assets/images/discover pur.png",
-                width: 60,
-                height: 60,
-
-              )
+                      "assets/images/discover pur.png",
+                      width: 60,
+                      height: 60,
+                    )
                   : Image.asset(
-                "assets/images/discover.png",
-                width: 60,
-                height: 60,
-
-              )
-          ),
+                      "assets/images/discover.png",
+                      width: 60,
+                      height: 60,
+                    )),
           IconButton(
               enableFeedback: false,
               onPressed: () {
@@ -95,20 +84,16 @@ class _LayOutScreenState extends State<LayOutScreen> {
                 });
               },
               icon: pageIndex == 2
-                  ?  Image.asset(
-                "assets/images/profill pur.png",
-                width: 35,
-                height: 35,
-
-              )
+                  ? Image.asset(
+                      "assets/images/profill pur.png",
+                      width: 35,
+                      height: 35,
+                    )
                   : Image.asset(
-                "assets/images/profill.png",
-                width: 35,
-                height: 35,
-
-              )
-          ),
-
+                      "assets/images/profill.png",
+                      width: 35,
+                      height: 35,
+                    )),
         ],
       ),
     );
@@ -132,7 +117,6 @@ class LayOutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: PersistentTabView(
         context,
         screens: screens(),

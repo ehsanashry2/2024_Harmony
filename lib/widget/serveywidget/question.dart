@@ -20,8 +20,8 @@ class Question extends StatelessWidget {
               decoration: BoxDecoration(
                 color: const Color(0xffDCC1FF),
                 borderRadius: BorderRadius.circular(6.0),
-                boxShadow: const [
-                  BoxShadow(
+                boxShadow: [
+                  const BoxShadow(
                     color: Color(0xffAA77FF),
                     offset: Offset(0, 1),
                     blurRadius: 6.7,
