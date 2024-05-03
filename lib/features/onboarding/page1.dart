@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ocd/features/onboarding/page2.dart';
+
 
 class onboarding extends StatelessWidget {
   const onboarding({super.key});
@@ -25,7 +27,6 @@ class onboarding extends StatelessWidget {
                           fontFamily: 'workSans',
                         ),
                       ),
-
                       Row(
 
                         children: [
@@ -66,10 +67,11 @@ class onboarding extends StatelessWidget {
                         width: 99,
                         height:99,
                         decoration: BoxDecoration(
-
                           shape: BoxShape.circle,
+
                           color: Colors.transparent,
                           border:Border.all(
+
                               color: const Color(0xFF7D4DC3),
                               width: 3
 
@@ -95,19 +97,27 @@ class onboarding extends StatelessWidget {
                             ),
                             child: Container(
                               child: Center(
-                                child: Icon(
-                                  Icons.arrow_forward_ios, // Your icon
-                                  color: Colors.white,
+                                child: IconButton(
+                                  icon: Icon( Icons.arrow_forward_ios, // Your icon
+                                    color: Colors.white,
+
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => onboarding2()), // Replace NextPage() with the desired page
+                                    );
+
+                                  },
+
 
                                 ),
-
-
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ),]
+                      ),)
+                  ]
 
               ),
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/model/authModel/signup.dart';
 import 'package:ocd/screens/auth/final1.dart';
+import 'package:ocd/screens/auth/sing_in.dart';
 import 'package:ocd/util/font_style.dart';
 import 'package:ocd/widget/authWidget/custombutton.dart';
 import 'package:ocd/widget/authWidget/customtextfield.dart';
@@ -160,7 +161,7 @@ class SignUpScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Sona()),
+                      MaterialPageRoute(builder: (context) => const Final()),
                     );
                   },
                 ),
@@ -179,10 +180,21 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Text("Sign In",
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignIn()),
+                    );
+                  },
+                  child: Text(
+                    'Sign in',
                     style: TextStyle(
                       color: Color(0xFFAA77FF),
-                    )),
+                    ),
+                  ),
+                ),
+
               ],
             ),
           ),
