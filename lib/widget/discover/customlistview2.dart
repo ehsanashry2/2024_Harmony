@@ -22,7 +22,7 @@ class HorizontalListView2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 170,
       width: 400,
       margin: const EdgeInsets.symmetric(
           vertical: 10.0), // Adjust the height as needed

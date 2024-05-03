@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ocd/features/onboarding/page2.dart';
 
 class OnBording extends StatelessWidget {
   const OnBording({super.key});
@@ -16,7 +17,7 @@ class OnBording extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Text(
+                  Text(
                     '      Welcome \n to your path to \n        healing ',
                     style: TextStyle(
                       color: Color(0xFFAA77FF),
@@ -28,7 +29,7 @@ class OnBording extends StatelessWidget {
                   Row(
                     children: [
                       IconButton(
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.double_arrow,
                           color: Colors.white,
                           size: 30,
@@ -46,10 +47,10 @@ class OnBording extends StatelessWidget {
             )),
             Expanded(
               child: Stack(children: [
-                const SizedBox(
+                SizedBox(
                   width: double.infinity,
                   height: double.infinity,
-                  child: Image(
+                  child: const Image(
                       width: double.infinity,
                       image: AssetImage(
                         'assets/images/1.png',
@@ -58,11 +59,12 @@ class OnBording extends StatelessWidget {
                 ),
                 Center(
                   child: Container(
-                    margin: const EdgeInsets.only(top: 450),
+                    margin: EdgeInsets.only(top: 450),
                     width: 99,
                     height: 99,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
+
                       color: Colors.transparent,
                       border: Border.all(
                           color: const Color(0xFF7D4DC3),
@@ -72,7 +74,7 @@ class OnBording extends StatelessWidget {
                       child: Container(
                         width: 77,
                         height: 77,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
@@ -84,16 +86,28 @@ class OnBording extends StatelessWidget {
                             stops: [0.1242, 0.8177],
                           ),
                         ),
-                        child: const Center(
-                          child: Icon(
-                            Icons.arrow_forward_ios, // Your icon
-                            color: Colors.white,
+                        child: Container(
+                          child: Center(
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.arrow_forward_ios, // Your icon
+                                color: Colors.white,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          onboarding2()), // Replace NextPage() with the desired page
+                                );
+                              },
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
+                )
               ]),
             ),
           ]),

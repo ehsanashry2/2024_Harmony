@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/screens/auth/final1.dart';
+import 'package:ocd/screens/auth/signup.dart';
+
 
 //import 'package:ocd/screens/home.dart';
 //import 'package:ocd/screens/survey/survey.dart';
 import 'package:ocd/widget/authWidget/custombutton.dart';
 import 'package:ocd/widget/authWidget/customtextfield.dart';
+
+
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -55,7 +59,7 @@ class SignIn extends StatelessWidget {
               buttonText: 'Sign In',
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Sona()));
+                    MaterialPageRoute(builder: (context) => const Final()));
               },
               topMargin: 44,
               leftMargin: 33.0,
@@ -69,10 +73,21 @@ class SignIn extends StatelessWidget {
                   style: TextStyle(color: Color(0xFF1A1A1A), fontSize: 13.0)),
             ),
             const SizedBox(height: 20.0),
-            const Text('Sign Up',
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignUpScreen()),
+                );
+              },
+              child: Text(
+                'Sign Up',
                 style: TextStyle(
                   color: Color(0xFFAA77FF),
-                ))
+                ),
+              ),
+            ),
+
           ],
         ),
       ),

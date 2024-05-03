@@ -37,7 +37,7 @@ class _ChaBotState extends State<ChaBot> {
               onPressed: () {},
               color: Colors.black,
             ),
-            title: Text(
+            title: const Text(
               "AI Therapist",
               style: TextStyle(
                 fontSize: 20,
@@ -48,12 +48,12 @@ class _ChaBotState extends State<ChaBot> {
             ),
             centerTitle: true,
           ),
-          body: Column(
+          body: const Column(
             children: [
               AskingChat(),
               ResponsingChat(),
               Padding(
-                padding: const EdgeInsets.only(top: 425.0, bottom: 10.0),
+                padding: EdgeInsets.only(top: 425.0, bottom: 10.0),
                 child: SuggestMessage(),
               ),
               SendButton()
