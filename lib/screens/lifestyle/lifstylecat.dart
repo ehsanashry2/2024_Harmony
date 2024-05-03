@@ -10,7 +10,7 @@ class LifeStyleCate extends StatefulWidget {
 class _LifeStyleCateState extends State<LifeStyleCate> {
   @override
   Widget build(BuildContext context) {
-    bool click = true;
+    bool click = false;
     return Scaffold(
       appBar: AppBar(
         title: Center(child: const Text('Life Style')),
@@ -23,17 +23,18 @@ class _LifeStyleCateState extends State<LifeStyleCate> {
       ),
       body: Column(children: [
         Container(
+          //padding: const EdgeInsets.all(10),
           margin: const EdgeInsets.all(10),
-          color: const Color(0x8AD9D9D9),
           decoration: BoxDecoration(
             color: const Color(0x8AD9D9D9),
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(5),
+                margin: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color:
                       (click == false) ? const Color(0x8FFFFFFF) : Colors.white,
@@ -42,6 +43,7 @@ class _LifeStyleCateState extends State<LifeStyleCate> {
                 child: InkWell(
                   onTap: () => setState(() {
                     click = !click;
+                    print("Click is now: $click");
                   }),
                   child: const Text(
                     'Habit',
@@ -55,13 +57,33 @@ class _LifeStyleCateState extends State<LifeStyleCate> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(5),
+                margin: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
-                    color: const Color(0x8FFFFFFF),
-                    borderRadius: BorderRadius.circular(20)),
+                  color:
+                      (click == false) ? const Color(0x8FFFFFFF) : Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: const Text(
-                  'Thank you',
+                  'Memories',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'WorkSans',
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(5),
+                margin: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  color:
+                      (click == false) ? const Color(0x8FFFFFFF) : Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Text(
+                  'progress',
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w500,
@@ -72,7 +94,14 @@ class _LifeStyleCateState extends State<LifeStyleCate> {
               ),
             ],
           ),
-        )
+        ),
+        GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, childAspectRatio: 1.5)
+                itemBuilder:(context, index) {
+                  
+                },
+                )
       ]),
     );
   }
