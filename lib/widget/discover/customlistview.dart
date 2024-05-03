@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HorizontalListView1 extends StatelessWidget {
   final List<Map<String, dynamic>> items = [
     {
-      'label': 'The OCD Stories',
+      'label': 'Teen OCD Stories',
       'imagePath': 'assets/images/18.png',
     },
     {
@@ -38,8 +38,9 @@ class HorizontalListView1 extends StatelessWidget {
               Text(
                 items[index]['label'],
                 style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'WorkSans',
                 ),
               ),
             ],

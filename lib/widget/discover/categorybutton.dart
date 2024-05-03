@@ -35,13 +35,16 @@ class CategoryButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.w500,
-              fontFamily: 'workSans',
-              color: Colors.black,
+          Padding(
+            padding: const EdgeInsets.only(left:4.0),
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'workSans',
+                color: Colors.black,
+              ),
             ),
           ),
           Padding(

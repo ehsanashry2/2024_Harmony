@@ -131,7 +131,7 @@ class Discover extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 10,top: 15),
                 child: Text(
                   "Popular ",
                   style: TextStyle(
@@ -143,7 +143,7 @@ class Discover extends StatelessWidget {
               ),
               HorizontalListView1(),
               const Padding(
-                padding: EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 10,),
                 child: Text(
                   "Programs",
                   style: TextStyle(

@@ -32,19 +32,23 @@ class HorizontalListView2 extends StatelessWidget {
         itemBuilder: (context, index) {
           return Column(
             children: <Widget>[
-              Image.asset(
-                items[index]['imagePath'],
-                fit: BoxFit.contain,
-                //width: 80,
-                // height: 50, // This can be changed to fit your layout
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  items[index]['imagePath'],
+                  fit: BoxFit.contain,
+                  //width: 80,
+                  // height: 50, // This can be changed to fit your layout
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   items[index]['label'],
                   style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 8,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'WorkSans',
                   ),
                 ),
               ),
