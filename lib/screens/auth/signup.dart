@@ -157,7 +157,7 @@ class SignUpScreen extends StatelessWidget {
                     child: const Text(
                       'I already have an account',
                       style: TextStyle(
-                        color: Color(0xFF1A1A1A),
+                        color: Color(0xFF808080),
                         fontSize: 13.0,
                       ),
                     ),
@@ -174,6 +174,7 @@ class SignUpScreen extends StatelessWidget {
                     'Sign in',
                     style: TextStyle(
                       color: Color(0xFFAA77FF),
+
                     ),
                   ),
                 ),

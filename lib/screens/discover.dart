@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart'; //import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:ocd/screens/AI2/AI.dart';
+import 'package:ocd/screens/articles/articles.dart';
+import 'package:ocd/screens/breathe/breathe.dart';
+import 'package:ocd/screens/games/games.dart';
+import 'package:ocd/screens/lifestyle/lifestyle1.dart';
+import 'package:ocd/screens/podcast/podcast.dart';
 import 'package:ocd/widget/discover/catogrybutton.dart';
 import 'package:ocd/widget/discover/customlistview.dart';
 import 'package:ocd/widget/discover/customlistview2.dart';
+
 
 class Discover extends StatelessWidget {
   const Discover({super.key});
@@ -25,32 +32,40 @@ class Discover extends StatelessWidget {
       {
         'label': 'AI Therapist',
         'imagePath': 'assets/images/AII.png',
-        'colors': buttonColors[0]
+        'colors': buttonColors[0],
+
+
       },
       {
         'label': 'Life Style',
         'imagePath': 'assets/images/lifestyle.png',
-        'colors': buttonColors[1]
+        'colors': buttonColors[1],
+
       },
       {
         'label': 'Breath',
         'imagePath': 'assets/images/breath.png',
-        'colors': buttonColors[2]
+        'colors': buttonColors[2],
+
       },
       {
         'label': 'Podcasts',
         'imagePath': 'assets/images/podcastes.png',
-        'colors': buttonColors[3]
+        'colors': buttonColors[3],
+
       },
       {
         'label': 'Articles',
-        'imagePath': 'assets/images/Articles.png',
-        'colors': buttonColors[4]
+        'imagePath': 'assets/images/articlesss.png',
+        'colors': buttonColors[4],
+
       },
       {
         'label': 'Games',
         'imagePath': 'assets/images/games.png',
-        'colors': buttonColors[5]
+        'colors': buttonColors[5],
+
+
       },
     ];
 
@@ -111,22 +126,77 @@ class Discover extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 9, right: 3),
                 child: SizedBox(
-                  height: 250,
-                  child: GridView.builder(
+                  height: 230,
+                  child:GridView.builder(
                     itemCount: categories.length,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
-                      childAspectRatio: (1 / 1),
-                      mainAxisExtent: 60,
+                      childAspectRatio: (1/1),
+                      mainAxisExtent:54
                     ),
                     itemBuilder: (context, index) {
                       var category = categories[index];
-                      return CategoryButton(
-                        label: category['label'],
-                        imagePath: category['imagePath'],
-                        gradientColors: category['colors'],
+                      return GestureDetector(
+                        onTap: () {
+                          // Navigate to a different screen based on the category index
+                          switch (index) {
+                            case 0:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AI(),
+                                ),
+                              );
+                              break;
+                            case 1:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Lifestyle(),
+                                ),
+                              );
+                              break;
+                            case 2:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Breathe(),
+                                ),
+                              );
+                              break;
+                            case 3:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Podcast(),
+                                ),
+                              );
+                              break;
+                            case 4:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Articles(),
+                                ),
+                              );
+                              break;
+                            case 5:
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Games(),
+                                ),
+                              );
+                          // Add cases for other indices
+                          }
+                        },
+                        child: CategoryButton(
+                          label: category['label'],
+                          imagePath: category['imagePath'],
+                          gradientColors: category['colors'],
+                        ),
                       );
                     },
                   ),

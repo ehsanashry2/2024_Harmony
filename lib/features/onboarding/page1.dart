@@ -59,7 +59,7 @@ class OnBording extends StatelessWidget {
                 ),
                 Center(
                   child: Container(
-                    margin: EdgeInsets.only(top: 450),
+                    margin: EdgeInsets.only(top: 355),
                     width: 99,
                     height: 99,
                     decoration: BoxDecoration(

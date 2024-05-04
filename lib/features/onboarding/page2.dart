@@ -52,7 +52,7 @@ class onboarding2 extends StatelessWidget {
 
                     Center(
                       child: Container(
-                        margin: EdgeInsets.only(top: 345),
+                        margin: EdgeInsets.only(top: 330),
                         width: 99,
                         height:99,
                         decoration: BoxDecoration(

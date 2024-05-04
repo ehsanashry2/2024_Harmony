@@ -70,7 +70,7 @@ class SignIn extends StatelessWidget {
                 top: 10.0,
               ),
               child: Text("I don't have an account",
-                  style: TextStyle(color: Color(0xFF1A1A1A), fontSize: 13.0)),
+                  style: TextStyle(color:Color(0xFF808080), fontSize: 13.0)),
             ),
             const SizedBox(height: 20.0),
             InkWell(

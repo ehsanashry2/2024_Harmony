@@ -18,8 +18,8 @@ class CategoryButton extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: gradientColors,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
         borderRadius:
             BorderRadius.all(Radius.circular(10.0)), // Rounded corners

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/model/surveymodel.dart';
+import 'package:ocd/screens/home/Home/layoutscreen.dart';
 //import 'package:flutter/widgets.dart';
 import 'package:ocd/widget/authWidget/custombutton.dart';
 
@@ -118,9 +119,14 @@ class Congratulations extends StatelessWidget {
                 Text("Your OCD Level is: ${level.toString().split('.').last}"),
             actions: <Widget>[
               TextButton(
-                child: const Text("Close"),
+                child: const Text("GO TO HOME"),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            LayOutScreen()), // Replace NextPage() with the desired page
+                  );
                 },
               ),
             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ocd/screens/AI2/AI.dart';
 import 'package:ocd/widget/aitherapist/askingchat.dart';
 import 'package:ocd/widget/aitherapist/responsingchat.dart';
 import 'package:ocd/widget/aitherapist/sendbutton.dart';
@@ -34,7 +35,14 @@ class _ChaBotState extends State<ChaBot> {
             elevation: 0,
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          AI ()), // Replace NextPage() with the desired page
+                );
+              },
               color: Colors.black,
             ),
             title: const Text(
