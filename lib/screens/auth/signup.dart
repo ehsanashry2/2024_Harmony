@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/model/authModel/signup.dart';
 import 'package:ocd/screens/auth/final1.dart';
 import 'package:ocd/screens/auth/sing_in.dart';
 import 'package:ocd/util/font_style.dart';
 import 'package:ocd/widget/authWidget/custombutton.dart';
 import 'package:ocd/widget/authWidget/customtextfield.dart';
-import 'package:provider/provider.dart';
-import 'package:intl/intl.dart';
 
 class SignUpScreen extends StatelessWidget {
   final font = urbanistHeadTitle;
@@ -14,8 +11,7 @@ class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    final signUpModel = Provider.of<SignUpModel>(context);
-    //late final font = urbanistHeadTitle;
+
     return Scaffold(
       backgroundColor: const Color(0xFFE5D1FA),
       body: Stack(clipBehavior: Clip.none, children: <Widget>[
@@ -58,13 +54,13 @@ class SignUpScreen extends StatelessWidget {
               children: <Widget>[
                 const Center(
                     child: Text(
-                  'Create Account',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'workSans',
-                  ),
-                )),
+                      'Create Account',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'workSans',
+                      ),
+                    )),
                 const SizedBox(height: 40.0),
                 const CustomTextField(
                   fieldName: 'Full Name',
@@ -73,7 +69,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 CustomTextField(
                   fieldName: 'email',
-                  onChanged: (value) => signUpModel.email = value,
+                  //onChanged: (value) => signUpModel.email = value,
                   prefixIcon: Icons.email,
                 ),
                 const CustomTextField(
@@ -120,26 +116,10 @@ class SignUpScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: GestureDetector(
-                            onTap: () async {
-                              final DateTime? picked = await showDatePicker(
-                                context: context,
-                                initialDate:
-                                    signUpModel.dateOfBirth ?? DateTime.now(),
-                                firstDate: DateTime(1900),
-                                lastDate: DateTime.now(),
-                              );
-                              if (picked != null) {
-                                signUpModel.dateOfBirth = picked;
-                              }
-                            },
+                            onTap: () async {},
                             child: AbsorbPointer(
                               child: TextField(
-                                controller: TextEditingController(
-                                  text: signUpModel.dateOfBirth != null
-                                      ? DateFormat('dd MMMM yyyy')
-                                          .format(signUpModel.dateOfBirth)
-                                      : '',
-                                ),
+                                controller: TextEditingController(),
                                 decoration: const InputDecoration(
                                   hintText: 'Date of Birth',
                                   border: OutlineInputBorder(),
@@ -197,7 +177,6 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
               ],
             ),
           ),
