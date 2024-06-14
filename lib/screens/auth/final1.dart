@@ -10,16 +10,16 @@ class Final extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFD8E4FE),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              const Color(0xFFD8E4FE),
+              Color(0xFFD8E4FE),
               Colors.white, // Center color
-              const Color(0xFFD8E4FE),
+              Color(0xFFD8E4FE),
             ],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            stops: const [0.0, 0.5, 1.0],
+            stops: [0.0, 0.5, 1.0],
           ),
         ),
         child: SafeArea(
@@ -39,7 +39,7 @@ class Final extends StatelessWidget {
                     ),
                   ),
                 )),
-                Text(
+                const Text(
                   'To your first step to wards \n                healing.',
                   style: TextStyle(
                     fontSize: 20,
@@ -61,7 +61,7 @@ class Final extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontFamily: 'workSans',
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Container(
@@ -71,14 +71,14 @@ class Final extends StatelessWidget {
                     shape: BoxShape.circle,
                     color: Colors.white,
                     border: Border.all(
-                        color: Color(0xFF7D4DC3),
+                        color: const Color(0xFF7D4DC3),
                         width: 3), // Outer circle color
                   ),
                   child: Center(
                     child: Container(
                       width: 77,
                       height: 77,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
@@ -92,7 +92,7 @@ class Final extends StatelessWidget {
                       ),
                       child: Center(
                         child: IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_upward, // Your icon
                             color: Colors.white,
                           ),
@@ -101,7 +101,7 @@ class Final extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      LayOutScreen()), // Replace NextPage() with the desired page
+                                      const LayOutScreen()), // Replace NextPage() with the desired page
                             );
                           },
                         ),

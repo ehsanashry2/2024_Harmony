@@ -42,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) =>  Profil()),
+                MaterialPageRoute(builder: (context) =>  const Profil()),
               );
             },
           ),
@@ -111,7 +111,7 @@ class SignUpScreen extends StatelessWidget {
 
   }
 
-  Widget _buildTextField({required String labelText, required String hint, IconData? icon, IconData? suffixIcon, IconData? hintIcon, bool obscureText = false, TextInputType keyboardType = TextInputType.text}) {
+  Widget _buildTextField({required String labelText, required String hint, IconData? suffixIcon, IconData? hintIcon, bool obscureText = false, TextInputType keyboardType = TextInputType.text}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
       child: Column(
@@ -119,20 +119,20 @@ class SignUpScreen extends StatelessWidget {
         children: [
           Text(
             labelText,
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
           ),
           const SizedBox(height: 8.0), // Add spacing between label and hint
           TextField(
-            cursorColor: Color(0xffAA77FF),
+            cursorColor: const Color(0xffAA77FF),
             decoration: InputDecoration(
               hintText: hint,
-              hintStyle: TextStyle(color: Colors.grey),
-              labelStyle: TextStyle(color: Colors.black),
+              hintStyle: const TextStyle(color: Colors.grey),
+              labelStyle: const TextStyle(color: Colors.black),
               suffixIcon: suffixIcon != null ? IconButton(
                 icon: Icon(suffixIcon),
                 onPressed: () {},
               ) : null,
-              suffixIconConstraints: BoxConstraints(
+              suffixIconConstraints: const BoxConstraints(
                 minWidth: 24, // Adjust according to your preference
                 minHeight: 24,
               ),
@@ -140,10 +140,10 @@ class SignUpScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(hintIcon),
-                  SizedBox(width: 8.0), // Add spacing between hint icon and text field
+                  const SizedBox(width: 8.0), // Add spacing between hint icon and text field
                 ],
               ) : null, // Add the hint icon
-              prefixIconConstraints: BoxConstraints(
+              prefixIconConstraints: const BoxConstraints(
                 minWidth: 24, // Adjust according to your preference
                 minHeight: 24,
               ),

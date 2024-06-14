@@ -13,7 +13,7 @@ class _LifeStyleCateState extends State<LifeStyleCate> {
     bool click = false;
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Life Style')),
+        title: const Center(child: Text('Life Style')),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {

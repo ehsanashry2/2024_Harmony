@@ -60,7 +60,7 @@ class Discover extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
+                const Text(
                   'Discover',
                   style: TextStyle(
                       color: Colors.black,

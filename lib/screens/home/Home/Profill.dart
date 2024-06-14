@@ -29,39 +29,39 @@ class _ProfilState extends State<Profil> {
             ],
           ),
           Container(
-            padding: EdgeInsets.only(top: 100),
+            padding: const EdgeInsets.only(top: 100),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 0),
+                    margin: const EdgeInsets.only(left: 0),
                     child: _buildTextField(
                       labelText: 'Mail ',
                       additionalText: 'Omar@gmail.com',
                     ),
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.grey,
                     thickness: 1.0,
                     indent: 0.0,
                     endIndent: 0.0,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   _buildTextField(
                       labelText: 'Notification',
                       icon: Icons.notification_important,
                       suffixIcon: Icons.toggle_off_outlined),
-                  Divider(
+                  const Divider(
                     color: Colors.grey,
                     thickness: 1.0,
                     indent: 5.0,
                     endIndent: 5.0,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   _buildTextField(
@@ -69,13 +69,13 @@ class _ProfilState extends State<Profil> {
                     icon: Icons.person,
                     suffixIcon: Icons.arrow_forward_ios_rounded,
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.grey,
                     thickness: 1.0,
                     indent: 5.0,
                     endIndent: 5.0,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   GestureDetector(
@@ -95,7 +95,7 @@ class _ProfilState extends State<Profil> {
                                 height: 200,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  gradient: LinearGradient(
+                                  gradient: const LinearGradient(
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                     colors: [
@@ -107,7 +107,7 @@ class _ProfilState extends State<Profil> {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "\n   Are you sure you want \n            to log out ?",
                                       style: TextStyle(
                                         color: Colors.white,
@@ -116,7 +116,7 @@ class _ProfilState extends State<Profil> {
                                         fontSize: 20,
                                       ),
                                     ),
-                                    SizedBox(height: 40),
+                                    const SizedBox(height: 40),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
@@ -127,7 +127,7 @@ class _ProfilState extends State<Profil> {
                                                 BorderRadius.circular(8),
                                             border:
                                                 Border.all(color: Colors.white),
-                                            gradient: LinearGradient(
+                                            gradient: const LinearGradient(
                                               begin: Alignment.topCenter,
                                               end: Alignment.bottomCenter,
                                               colors: [
@@ -144,10 +144,13 @@ class _ProfilState extends State<Profil> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        SignIn()),
+                                                        const SignIn()),
                                               );
                                             },
-                                            child: Text(
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor:
+                                                    Colors.transparent),
+                                            child: const Text(
                                               " Log me out",
                                               style: TextStyle(
                                                 color: Colors.white,
@@ -156,9 +159,6 @@ class _ProfilState extends State<Profil> {
                                                 fontSize: 15,
                                               ),
                                             ),
-                                            style: ElevatedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent),
                                           ),
                                         ),
                                         ElevatedButton(
@@ -167,15 +167,19 @@ class _ProfilState extends State<Profil> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Profil()),
+                                                      const Profil()),
                                             );
                                           },
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor:
+                                                Colors.white, // لون خلفية الزر
+                                          ),
                                           child: Row(
                                             children: [
-                                              SizedBox(width: 8),
+                                              const SizedBox(width: 8),
                                               Container(
                                                 color: Colors.white,
-                                                child: Text(
+                                                child: const Text(
                                                   "Stay logged in",
                                                   style: TextStyle(
                                                     color: Color(0xFFAA77FF),
@@ -186,10 +190,6 @@ class _ProfilState extends State<Profil> {
                                                 ),
                                               ),
                                             ],
-                                          ),
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor:
-                                                Colors.white, // لون خلفية الزر
                                           ),
                                         ),
                                       ],
@@ -202,7 +202,7 @@ class _ProfilState extends State<Profil> {
                         },
                       );
                     },
-                    child: Row(
+                    child: const Row(
                       children: [
                         Icon(Icons.logout_sharp, color: Colors.grey),
                         SizedBox(width: 8),
@@ -231,7 +231,7 @@ class _ProfilState extends State<Profil> {
   Widget buildCoverImage() => Container(
         width: double.infinity,
         height: 160,
-        color: Color(0xFFE5D1FA),
+        color: const Color(0xFFE5D1FA),
       );
 
   Widget buildProfileImage() => Column(
@@ -255,8 +255,8 @@ class _ProfilState extends State<Profil> {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(height: 8),
-          Text(
+          const SizedBox(height: 8),
+          const Text(
             "Omar Ahmed",
             style: TextStyle(
               color: Colors.black,
@@ -290,7 +290,7 @@ class _ProfilState extends State<Profil> {
               children: [
                 Text(
                   labelText,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
                     fontFamily: 'workSans',
@@ -300,7 +300,7 @@ class _ProfilState extends State<Profil> {
                 if (additionalText != null) // إذا كان هناك نص إضافي، قم بعرضه
                   Text(
                     additionalText,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontFamily: 'workSans',
                       fontSize: 12,
@@ -317,7 +317,7 @@ class _ProfilState extends State<Profil> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Editprofill()),
+                  MaterialPageRoute(builder: (context) => const Editprofill()),
                 );
               },
             ),

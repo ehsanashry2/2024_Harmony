@@ -26,7 +26,7 @@ class SendButton extends StatelessWidget {
           filled: true,
           fillColor: Colors.white,
           suffixIcon: Container(
-            margin: EdgeInsets.all(4),
+            margin: const EdgeInsets.all(4),
             width: 33,
             height: 35,
             decoration: const BoxDecoration(

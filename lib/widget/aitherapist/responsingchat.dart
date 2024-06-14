@@ -18,9 +18,9 @@ class ResponsingChat extends StatelessWidget {
               bottomLeft: Radius.circular(20),
             ),
           ),
-          child: Text(
+          child: const Text(
             "Hi, How can I assist you today?",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
               fontFamily: 'WorkSans',

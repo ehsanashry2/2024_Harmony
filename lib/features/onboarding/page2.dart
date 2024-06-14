@@ -13,9 +13,9 @@ class onboarding2 extends StatelessWidget {
 
         //mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Center(
+            const Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 170,left: 20,right: 30),
+                  padding: EdgeInsets.only(top: 170,left: 20,right: 30),
                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
 
@@ -34,12 +34,12 @@ class onboarding2 extends StatelessWidget {
                 )),
             Expanded(
               child: Stack(
-                  children: [SizedBox(width: 424,
+                  children: [const SizedBox(width: 424,
                     height:624,
 
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 120),
-                      child: const Image(
+                      padding: EdgeInsets.only(top: 120),
+                      child: Image(
                           width: 424,
                           height: 624,
                           image: AssetImage(
@@ -52,7 +52,7 @@ class onboarding2 extends StatelessWidget {
 
                     Center(
                       child: Container(
-                        margin: EdgeInsets.only(top: 345),
+                        margin: const EdgeInsets.only(top: 345),
                         width: 99,
                         height:99,
                         decoration: BoxDecoration(
@@ -69,7 +69,7 @@ class onboarding2 extends StatelessWidget {
                           child: Container(
                             width: 77,
                             height: 77,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               gradient: LinearGradient(
                                 begin: Alignment.topLeft,
@@ -86,14 +86,14 @@ class onboarding2 extends StatelessWidget {
                             child: Container(
                               child: Center(
                                 child: IconButton(
-                                  icon: Icon( Icons.arrow_forward_ios, // Your icon
+                                  icon: const Icon( Icons.arrow_forward_ios, // Your icon
                                     color: Colors.white,
 
                                   ),
                                   onPressed: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => onboarding3()), // Replace NextPage() with the desired page
+                                      MaterialPageRoute(builder: (context) => const onboarding3()), // Replace NextPage() with the desired page
                                     );
 
                                   },

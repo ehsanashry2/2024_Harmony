@@ -10,9 +10,9 @@ class progress extends StatelessWidget {
       body:  Column(
         //mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Center(
+            const Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 100,),
+                  padding: EdgeInsets.only(top: 100,),
                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
 
@@ -33,9 +33,9 @@ class progress extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: 70),
                 child: Stack(
-                    children: [SizedBox(width: 380,
+                    children: [const SizedBox(width: 380,
                       height: 380,
-                      child: const Image(
+                      child: Image(
                           width: double.infinity,
                           image: AssetImage(
                             'assets/images/progrees.png',
@@ -46,7 +46,7 @@ class progress extends StatelessWidget {
 
                       Center(
                         child: Container(
-                          margin: EdgeInsets.only(top: 340),
+                          margin: const EdgeInsets.only(top: 340),
                           width: 99,
                           height:99,
                           decoration: BoxDecoration(
@@ -63,7 +63,7 @@ class progress extends StatelessWidget {
                             child: Container(
                               width: 77,
                               height: 77,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 gradient: LinearGradient(
                                   begin: Alignment.topLeft,
@@ -78,7 +78,7 @@ class progress extends StatelessWidget {
 
                               ),
                               child: Container(
-                                child: Center(
+                                child: const Center(
                                   child: Icon(
                                     Icons.arrow_forward_ios, // Your icon
                                     color: Colors.white,

@@ -31,8 +31,8 @@ class _LayOutScreenState extends State<LayOutScreen> {
   Container buildMyNavBar(BuildContext context) {
     return Container(
       height: 60,
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
         ),

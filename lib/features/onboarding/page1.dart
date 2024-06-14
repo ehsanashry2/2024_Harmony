@@ -17,7 +17,7 @@ class OnBording extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
+                  const Text(
                     '      Welcome \n to your path to \n        healing ',
                     style: TextStyle(
                       color: Color(0xFFAA77FF),
@@ -29,7 +29,7 @@ class OnBording extends StatelessWidget {
                   Row(
                     children: [
                       IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.double_arrow,
                           color: Colors.white,
                           size: 30,
@@ -47,10 +47,10 @@ class OnBording extends StatelessWidget {
             )),
             Expanded(
               child: Stack(children: [
-                SizedBox(
+                const SizedBox(
                   width: double.infinity,
                   height: double.infinity,
-                  child: const Image(
+                  child: Image(
                       width: double.infinity,
                       image: AssetImage(
                         'assets/images/1.png',
@@ -59,7 +59,7 @@ class OnBording extends StatelessWidget {
                 ),
                 Center(
                   child: Container(
-                    margin: EdgeInsets.only(top: 450),
+                    margin: const EdgeInsets.only(top: 450),
                     width: 99,
                     height: 99,
                     decoration: BoxDecoration(
@@ -74,7 +74,7 @@ class OnBording extends StatelessWidget {
                       child: Container(
                         width: 77,
                         height: 77,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
@@ -89,7 +89,7 @@ class OnBording extends StatelessWidget {
                         child: Container(
                           child: Center(
                             child: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios, // Your icon
                                 color: Colors.white,
                               ),
@@ -98,7 +98,7 @@ class OnBording extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          onboarding2()), // Replace NextPage() with the desired page
+                                          const onboarding2()), // Replace NextPage() with the desired page
                                 );
                               },
                             ),

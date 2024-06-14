@@ -17,10 +17,10 @@ class MyTimeLineTile extends StatelessWidget {
       child: TimelineTile(
         isFirst: isFirst,
         isLast: isLast,
-        beforeLineStyle: LineStyle(color: ispast?  Color(0xFFAA77FF):Colors.deepPurple.shade100),
+        beforeLineStyle: LineStyle(color: ispast?  const Color(0xFFAA77FF):Colors.deepPurple.shade100),
         indicatorStyle: IndicatorStyle(
           width: 20,
-          color: ispast?  Color(0xFFAA77FF):Colors.deepPurple.shade100,
+          color: ispast?  const Color(0xFFAA77FF):Colors.deepPurple.shade100,
         iconStyle: IconStyle(
             iconData: Icons.done,
             color:Colors.white
@@ -31,7 +31,7 @@ class MyTimeLineTile extends StatelessWidget {
 
           ispast: ispast,
           child: eventcard,
-          containercolor:Color(0xFFE3DFFD),
+          containercolor:const Color(0xFFE3DFFD),
         ),
 
       ),

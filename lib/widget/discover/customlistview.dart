@@ -17,7 +17,7 @@ class HorizontalListView1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150,
       width: 400, // Adjust the height as needed
       child: ListView.builder(

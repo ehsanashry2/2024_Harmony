@@ -80,7 +80,7 @@ class SignIn extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => SignUpScreen()),
                 );
               },
-              child: Text(
+              child: const Text(
                 'Sign Up',
                 style: TextStyle(
                   color: Color(0xFFAA77FF),

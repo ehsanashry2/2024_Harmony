@@ -6,15 +6,15 @@ class Home1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     body: Column(
+     body: const Column(
      children: <Widget>[
      Center(
      child: Padding(
-     padding: const EdgeInsets.only(right: 200,left: 20,top: 20),
+     padding: EdgeInsets.only(right: 200,left: 20,top: 20),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-              padding: const EdgeInsets.only(right: 200),
+              padding: EdgeInsets.only(right: 200),
               child: Text(
                 'Hello, Omar ',
                 style: TextStyle(
@@ -30,10 +30,10 @@ class Home1 extends StatelessWidget {
 
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(right:100,left: 170),
+                  padding: EdgeInsets.only(right:100,left: 170),
                   child: SizedBox(width: 100,
                     height:100,
-                    child: const Image(
+                    child: Image(
                         image: AssetImage(
                           'assets/images/home.png',
                         ),
@@ -59,7 +59,7 @@ class Home1 extends StatelessWidget {
      ),
       bottomNavigationBar:NavigationBar(
        height: 60,
-       destinations: [
+       destinations: const [
          NavigationDestination(
              icon: Icon(Icons.home),
              selectedIcon: Icon(Icons.home),
