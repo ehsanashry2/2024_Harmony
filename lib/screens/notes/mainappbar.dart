@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/screens/lifestyle/aboutscreen.dart';
 import 'package:ocd/screens/lifestyle/note_screen.dart';
+import 'package:ocd/screens/lifestyle/reading.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -77,10 +78,7 @@ class MainScreen extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          children: [
-            NotesScreen(),
-            const AboutScreen(),
-          ],
+          children: [NotesScreen(), const Reading()],
         ),
       ),
     );
