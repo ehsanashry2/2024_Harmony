@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ocd/screens/lifestyle/life.dart';
 
 class Lifestyle extends StatelessWidget {
   const Lifestyle({super.key});
@@ -6,7 +7,7 @@ class Lifestyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE5D1FA),
+      backgroundColor: Color(0xFFE5D1FA),
       body:  Column(
         //mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -79,10 +80,20 @@ class Lifestyle extends StatelessWidget {
                               ),
                               child: Container(
                                 child: Center(
-                                  child: Icon(
-                                    Icons.arrow_forward_ios, // Your icon
-                                    color: Colors.white,
+                                  child: IconButton(
+                                   icon: Icon(
+                                      Icons.arrow_forward_ios, // Your icon
+                                      color: Colors.white,
 
+
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>  Lifestylepage()),
+                                      );
+                                    },
                                   ),
 
 

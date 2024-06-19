@@ -5,6 +5,8 @@ import 'package:ocd/screens/survey/congratulations.dart';
 class SurveyController extends GetxController {
   List<SurveyQuestion> surveyquestions = surveyQuestions;
   RxInt currentQuestionIndex = 0.obs;
+  final userScores = List<int>.filled(10, 0).obs;
+
   void onOptionSelected(int selectedScore) {
     changeIndex(selectedScore);
   }
@@ -22,32 +24,58 @@ class SurveyController extends GetxController {
     update();
   }
 
+  void previousQuestion() {
+    if (currentQuestionIndex.value > 0) {
+      currentQuestionIndex.value--;
+    }
+    update();
+  }
+
   void calculateResult() {
     print("All Scores: $userScores");
-    OCDLevel level = calculateLevel(userScores);
+    int totalScore = userScores.reduce((value, element) => value + element);
+    OCDLevel level = calculateLevel(totalScore);
+    int levelNumber = getLevelNumber(level);
+
     // Use Get to navigate to a result page or show in current page
-    // Pass the result to the next page or display a dialog
     print(
-        'Your OCD Level is: ${level.toString().split('.').last}'); // For console output
-    Get.to(() => Congratulations(level: level)); // Navigate to result page
+        'Your OCD Level is: ${level.toString().split('.').last}, Total Points: $totalScore, Level Number: $levelNumber'); // For console output
+    Get.to(() => Congratulations(
+      level: level,
+      totalScore: totalScore,
+      levelNumber: levelNumber,
+    )); // Navigate to result page
+  }
+
+  OCDLevel calculateLevel(int totalScore) {
+    if (totalScore >= 0 && totalScore <= 7) {
+      return OCDLevel.none;
+    } else if (totalScore >= 8 && totalScore <= 15) {
+      return OCDLevel.mild;
+    } else if (totalScore >= 16 && totalScore <= 23) {
+      return OCDLevel.moderate;
+    } else {
+      return OCDLevel.severe;
+    }
+  }
+
+  int getLevelNumber(OCDLevel level) {
+    switch (level) {
+      case OCDLevel.none:
+        return 0;
+      case OCDLevel.mild:
+        return 1;
+      case OCDLevel.moderate:
+        return 2;
+      case OCDLevel.severe:
+        return 3;
+      default:
+        return 0;
+    }
   }
 }
 
 final userScores = List<int>.filled(10, 0).obs;
-
-OCDLevel calculateLevel(List<int> scores) {
-  int totalScore = scores.reduce((value, element) => value + element);
-
-  if (totalScore >= 0 && totalScore <= 7) {
-    return OCDLevel.none;
-  } else if (totalScore >= 8 && totalScore <= 15) {
-    return OCDLevel.mild;
-  } else if (totalScore >= 16 && totalScore <= 23) {
-    return OCDLevel.moderate;
-  } else {
-    return OCDLevel.severe;
-  }
-}
 
 List<SurveyQuestion> surveyQuestions = [
   SurveyQuestion(
@@ -62,8 +90,7 @@ List<SurveyQuestion> surveyQuestions = [
     imagePath: 'assets/images/6.png',
   ),
   SurveyQuestion(
-    question:
-        'To what extent do obsessions conflict with your daily activities?',
+    question: 'To what extent do obsessions conflict with your daily activities?',
     options: [
       SurveyOption(optionText: 'No conflict', score: 0),
       SurveyOption(optionText: 'Mild conflict', score: 1),
@@ -118,8 +145,7 @@ List<SurveyQuestion> surveyQuestions = [
     imagePath: 'assets/images/11.png',
   ),
   SurveyQuestion(
-    question:
-        'To what extent do compulsive thoughts conflict with daily activities, social life, and work?',
+    question: 'To what extent do compulsive thoughts conflict with daily activities, social life, and work?',
     options: [
       SurveyOption(optionText: 'No conflict', score: 0),
       SurveyOption(optionText: 'Slight conflict', score: 1),
@@ -130,8 +156,7 @@ List<SurveyQuestion> surveyQuestions = [
     imagePath: 'assets/images/12.png',
   ),
   SurveyQuestion(
-    question:
-        'How much distress do you feel if prevented from engaging in compulsive activities?',
+    question: 'How much distress do you feel if prevented from engaging in compulsive activities?',
     options: [
       SurveyOption(optionText: 'None', score: 0),
       SurveyOption(optionText: 'Mild', score: 1),
@@ -142,8 +167,7 @@ List<SurveyQuestion> surveyQuestions = [
     imagePath: 'assets/images/13.png',
   ),
   SurveyQuestion(
-    question:
-        'How much effort do you make to resist engaging in compulsive acts?',
+    question: 'How much effort do you make to resist engaging in compulsive acts?',
     options: [
       SurveyOption(optionText: 'Always trying', score: 0),
       SurveyOption(optionText: 'Trying most of the time', score: 1),
@@ -162,7 +186,5 @@ List<SurveyQuestion> surveyQuestions = [
       SurveyOption(optionText: 'Limited control', score: 3),
       SurveyOption(optionText: 'No control', score: 4),
     ],
-    //imagePath: '',
   ),
-  // Add more survey questions as needed
 ];

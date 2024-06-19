@@ -56,7 +56,7 @@ class Discover extends StatelessWidget {
       },
       {
         'label': 'Articles',
-        'imagePath': 'assets/images/articlesss.png',
+        'imagePath': 'assets/images/articles.png',
         'colors': buttonColors[4],
 
       },

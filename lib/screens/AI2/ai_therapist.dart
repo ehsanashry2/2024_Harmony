@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/screens/AI2/AI.dart';
+import 'package:ocd/screens/discover.dart';
+import 'package:ocd/screens/home/Home/layoutscreen.dart';
 import 'package:ocd/widget/aitherapist/askingchat.dart';
 import 'package:ocd/widget/aitherapist/responsingchat.dart';
 import 'package:ocd/widget/aitherapist/sendbutton.dart';
@@ -40,7 +42,7 @@ class _ChaBotState extends State<ChaBot> {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          AI ()), // Replace NextPage() with the desired page
+                          LayOutScreen()), // Replace NextPage() with the desired page
                 );
               },
               color: Colors.black,

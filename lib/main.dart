@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart'; // استيراد مكتبة GetX
+import 'package:ocd/screens/auth/signup.dart';
+import 'package:provider/provider.dart';
+import 'package:ocd/provider/noter_provider.dart';
+import 'package:ocd/screens/lifestyle/life.dart';
+import 'package:ocd/screens/notes/NewNoteDetalis.dart';
+import 'package:ocd/screens/notes/newnotscreen.dart';
+
 import 'features/onboarding/page1.dart';
-import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-            title: 'Flutter Demo',
-            home: OnBording(),
-
-        );
-      },
+    return ChangeNotifierProvider(
+      create: (context) => NoteProvider(),
+      child: GetMaterialApp( // استخدام GetMaterialApp بدلاً من MaterialApp
+        debugShowCheckedModeBanner: false,
+        home: OnBording(),
+      ),
     );
   }
 }
