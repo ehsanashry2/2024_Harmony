@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/screens/lifestyle/NewNoteDetalis.dart';
-import 'package:ocd/screens/lifestyle/newnotescreen.dart';
+import 'package:ocd/screens/notes/NewNoteDetalis.dart';
 import 'package:ocd/screens/notes/newnotescreen.dart';
 import 'package:provider/provider.dart';
 

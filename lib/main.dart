@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/provider/noter_provider.dart';
 import 'package:ocd/screens/layout_tap_bar.dart';
-import 'package:ocd/screens/lifestyle/mainappbar.dart';
-import 'package:ocd/screens/lifestyle/newnotescreen.dart';
-import 'package:ocd/screens/lifestyle/note_screen.dart';
+import 'package:ocd/screens/notes/NewNoteDetalis.dart';
 //import 'package:ocd/screens/survey/survey.dart';
 import 'package:provider/provider.dart';
 
-import 'screens/lifestyle/NewNoteDetalis.dart';
+import 'screens/notes/newnotescreen.dart';
 
 void main() {
   runApp(const MyApp());

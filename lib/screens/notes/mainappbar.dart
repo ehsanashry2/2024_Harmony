@@ -1,8 +1,8 @@
 // lib/main_screen.dart
 import 'package:flutter/material.dart';
-import 'package:ocd/screens/lifestyle/aboutscreen.dart';
-import 'package:ocd/screens/lifestyle/note_screen.dart';
+
 import 'package:ocd/screens/lifestyle/reading.dart';
+import 'package:ocd/screens/notes/note_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
