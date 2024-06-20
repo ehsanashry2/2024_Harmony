@@ -2,49 +2,63 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../provider/noter_provider.dart';
 
-class NoteDetailScreen extends StatelessWidget {
-  static const routeName = '/note-detail';
+class NewNoteScreen extends StatelessWidget {
+  static const routeName = '/new-note';
 
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _contentController = TextEditingController();
 
-  NoteDetailScreen({Key? key}) : super(key: key);
+  NewNoteScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final Note note = ModalRoute.of(context)!.settings.arguments as Note;
-    _titleController.text = note.title;
-    _contentController.text = note.content;
-
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          'New Note',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            fontFamily: "work-sans",
+          ),
+        ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.save, color: Color(0xffAA77FF)),
+          TextButton(
             onPressed: () {
-              final updatedNote = Note(
-                id: note.id,
-                title: _titleController.text,
-                content: _contentController.text,
-                date: note.date,
-              );
-              Provider.of<NoteProvider>(context, listen: false)
-                  .updateNote(updatedNote);
-              Navigator.of(context).pop();
+              final title = _titleController.text;
+              final content = _contentController.text;
+
+              if (title.isNotEmpty && content.isNotEmpty) {
+                final newNote = Note(
+                  id: DateTime.now().toString(),
+                  title: title,
+                  content: content,
+                  date: DateTime.now(),
+                );
+
+                Provider.of<NoteProvider>(context, listen: false)
+                    .addNote(newNote);
+                Navigator.of(context).pop();
+              }
             },
+            child: const Text(
+              'Done',
+              style: TextStyle(
+                color: Color(0xffAA77FF),
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                fontFamily: "work-sans",
+              ),
+            ),
           ),
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             NoteTitleField(controller: _titleController),
-            Text(
-              '${note.date.toLocal()}'.split(' ')[0],
-              style: const TextStyle(color: Colors.grey),
-            ),
             Expanded(
               child: NoteContentField(controller: _contentController),
             ),
@@ -77,8 +91,7 @@ class NoteTitleField extends StatelessWidget {
 class NoteContentField extends StatelessWidget {
   final TextEditingController controller;
 
-  const NoteContentField({Key? key, required this.controller})
-      : super(key: key);
+  const NoteContentField({Key? key, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

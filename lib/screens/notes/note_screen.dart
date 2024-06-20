@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/screens/notes/NewNoteDetalis.dart';
-import 'package:ocd/screens/notes/newnotescreen.dart';
+import 'package:ocd/screens/notes/newnotscreen.dart';
+
 import 'package:provider/provider.dart';
 
 import '../../provider/noter_provider.dart';
+import 'NewNoteDetalis.dart';
 
 class NotesScreen extends StatelessWidget {
   const NotesScreen({super.key});
@@ -57,35 +58,6 @@ class NotesScreen extends StatelessWidget {
     );
   }
 }
-
-// class TabBarRow extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       mainAxisAlignment: MainAxisAlignment.center,
-//       children: [
-//         _buildTabButton(context, 'Notes'),
-//         _buildTabButton(context, 'About'),
-//       ],
-//     );
-//   }
-
-//   Widget _buildTabButton(BuildContext context, String text) {
-//     return ElevatedButton(
-//       onPressed: () {
-//         // Handle tab button press
-//       },
-//       style: ElevatedButton.styleFrom(
-//         backgroundColor: Colors.grey.shade300,
-//         foregroundColor: Colors.black,
-//         shape: RoundedRectangleBorder(
-//           borderRadius: BorderRadius.circular(20),
-//         ),
-//       ),
-//       child: Text(text),
-//     );
-//   }
-// }
 
 class NoteCard extends StatelessWidget {
   final Note note;

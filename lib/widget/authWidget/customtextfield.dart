@@ -9,16 +9,19 @@ class CustomTextField extends StatelessWidget {
   final VoidCallback? onTap;
   final DateFormat? dateFormat;
   final Color? prefixIconColor;
+  final TextStyle? textStyle;
 
-  const CustomTextField(
-      {super.key,
-      required this.fieldName,
-      this.onChanged,
-      this.isPassword = false,
-      this.prefixIcon,
-      this.onTap,
-      this.dateFormat,
-      this.prefixIconColor});
+  const CustomTextField({
+    Key? key,
+    required this.fieldName,
+    this.onChanged,
+    this.isPassword = false,
+    this.prefixIcon,
+    this.onTap,
+    this.dateFormat,
+    this.prefixIconColor,
+    this.textStyle,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,7 @@ class CustomTextField extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20, top: 10.0),
             child: Text(
               fieldName,
-              style: const TextStyle(
+              style: textStyle ?? const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'WorkSans',
@@ -39,54 +42,64 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
           Container(
-            // Height of the text field, adjust to your preference
-            margin: const EdgeInsets.only(
-                top: 1.0,
-                left: 20.0,
-                right: 20), // Adjust positioning if needed
+            margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [Color(0xFFAA77FF), Color(0xFFFC65FF)],
               ),
-              borderRadius:
-                  BorderRadius.circular(10.0), // Border radius of the gradient
+              borderRadius: BorderRadius.circular(10.0),
             ),
             child: Padding(
-              padding:
-                  const EdgeInsets.all(2), // The size of the gradient 'border'
+              padding: const EdgeInsets.all(2),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white, // TextField background color
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: TextFormField(
-                  obscureText: isPassword,
-                  onChanged: (value) => onChanged,
-                  decoration: InputDecoration(
-                    // Your label
-                    // Centers the text vertically
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide:
-                          BorderSide.none, // Removes default underline border
+                child: Stack(
+                  children: [
+                    TextFormField(
+                      obscureText: isPassword,
+                      onChanged: onChanged,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide.none,
+                        ),
+                        prefixIcon: prefixIcon != null
+                            ? Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Icon(
+                              prefixIcon,
+                              color: prefixIconColor ?? const Color(0xFFAA77FF),
+                              size: 35.0,
+                            ),
+                            Positioned(
+
+                              right: 0.0, // تعديل المسافة عند الحاجة
+                              child: Container(
+                                width: 1.0,
+                                height: 40.0,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        )
+                            : null,
+                        suffixIcon: isPassword
+                            ? const Icon(Icons.visibility_off)
+                            : null,
+                      ),
+                      controller: TextEditingController(
+                        text: dateFormat != null && onTap == null
+                            ? dateFormat!.format(DateTime.now())
+                            : '',
+                      ),
                     ),
-                    prefixIcon: prefixIcon != null
-                        ? Icon(
-                            prefixIcon,
-                            color: const Color(0xFFAA77FF),
-                          )
-                        : null,
-                    suffixIcon: isPassword
-                        ? const Icon(Icons.visibility_off)
-                        : null, // Optional: icon inside text field
-                  ),
-                  controller: TextEditingController(
-                    text: dateFormat != null && onTap == null
-                        ? dateFormat!.format(DateTime.now())
-                        : '', // Apply the dateFormat to the text field
-                  ),
+                  ],
                 ),
               ),
             ),

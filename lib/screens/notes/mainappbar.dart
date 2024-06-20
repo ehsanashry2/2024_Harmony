@@ -1,11 +1,12 @@
-// lib/main_screen.dart
 import 'package:flutter/material.dart';
-
+import 'package:ocd/screens/lifestyle/aboutscreen.dart';
+import 'package:ocd/screens/lifestyle/life.dart';
+import 'package:ocd/screens/lifestyle/new.dart';
 import 'package:ocd/screens/lifestyle/reading.dart';
-import 'package:ocd/screens/notes/note_screen.dart';
+import 'note_screen.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,62 +14,92 @@ class MainScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           elevation: 0,
-          title: const Center(
-              child: Text('Reading',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "work-sans"))),
+          titleSpacing: 0, // Remove default padding around the title
+          leading: GestureDetector(
+            onTap: () {
+              // Navigate to the 'Reading' screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LifeStyleScreen()),
+              );
+            },
+            child: Icon(
+              Icons.arrow_back_ios, // Use arrow_back_ios for left arrow
+              color: Colors.black, // Set arrow color to black
+            ),
+          ),
+          title: Text(
+            'Reading',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+              fontFamily: "work-sans",
+            ),
+          ),
           actions: [
             TextButton(
               onPressed: () {
-                // Handle Done action
+                // Navigate to the 'DonePage' screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LifeStyleScreen()),
+                );
               },
               child: const Text(
                 'Done',
                 style: TextStyle(
-                    color: Color(0xffAA77FF),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: "work-sans"),
+                  color: Color(0xffAA77FF),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "work-sans",
+                ),
               ),
             ),
           ],
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(50),
             child: Container(
-              color: Colors.white,
+              color: Color(0xFFEAEAEA),
               child: TabBar(
                 indicator: BoxDecoration(
                   color: const Color(0xFFAA77FF),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                unselectedLabelColor: Colors.black,
+                unselectedLabelColor: Colors.grey,
                 labelColor: Colors.white,
                 tabs: [
                   Tab(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        //color: Color(0xFFEAEAEA),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: const Align(
-                        alignment: Alignment.center,
-                        child: Text('Notes'),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal:
+                              16), // Adjust the horizontal padding as needed
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Align(
+                          alignment: Alignment.center,
+                          child: Text('Notes'),
+                        ),
                       ),
                     ),
                   ),
                   Tab(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFEAEAEA),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: const Align(
-                        alignment: Alignment.center,
-                        child: Text('About'),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal:
+                              16), // Adjust the horizontal padding as needed
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Align(
+                          alignment: Alignment.center,
+                          child: Text('About'),
+                        ),
                       ),
                     ),
                   ),
@@ -78,7 +109,10 @@ class MainScreen extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          children: [NotesScreen(), const Reading()],
+          children: [
+            NotesScreen(),
+            const Reading(),
+          ],
         ),
       ),
     );

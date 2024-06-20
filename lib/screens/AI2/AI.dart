@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ocd/screens/AI2/ai_therapist.dart';
 
-class onboarding4 extends StatelessWidget {
-  const onboarding4({super.key});
+class AI extends StatelessWidget {
+  const AI({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,10 +75,20 @@ class onboarding4 extends StatelessWidget {
                             ),
                           ),
                           child: Container(
-                            child: const Center(
-                              child: Icon(
-                                Icons.arrow_forward_ios, // Your icon
-                                color: Colors.white,
+                            child: Center(
+                              child: IconButton(
+                                icon: Icon(
+                                  Icons.arrow_forward_ios, // Your icon
+                                  color: Colors.white,
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ChaBot()), // Replace NextPage() with the desired page
+                                  );
+                                },
                               ),
                             ),
                           ),

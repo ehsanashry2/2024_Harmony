@@ -9,66 +9,78 @@ class OnBording extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFE5D1FA),
       body: Column(
-          //mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Center(
-                child: Padding(
-              padding: const EdgeInsets.only(top: 100, left: 50),
+        children: <Widget>[
+          Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 130, left: 340),
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => onboarding2()),
+                      );
+                    },
+                    child: Image.asset(
+                      'assets/images/icon12.png',
+                      width: 30,
+                      height: 30,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 50),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Text(
-                    '      Welcome \n to your path to \n        healing ',
-                    style: TextStyle(
-                      color: Color(0xFFAA77FF),
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: 'workSans',
+                  Container(
+                    margin: const EdgeInsets.only(top: 100),
+                    child: const Text(
+                      '      Welcome \n to your path to \n        healing ',
+                      style: TextStyle(
+                        color: Color(0xFFAA77FF),
+                        fontSize: 30,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'workSans',
+                      ),
                     ),
                   ),
-                  Row(
-                    children: [
-                      IconButton(
-                        icon: const Icon(
-                          Icons.double_arrow,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                        onPressed: () {
-                          // Add your action here
-                        },
-                        padding: EdgeInsets.zero, // Remove padding
-                        // Alternatively, you can use margin: EdgeInsets.zero,
-                      ),
-                    ],
-                  )
                 ],
               ),
-            )),
-            Expanded(
-              child: Stack(children: [
-                const SizedBox(
-                  width: double.infinity,
-                  height: double.infinity,
+            ),
+          ),
+          Expanded(
+            child: Stack(
+              children: [
+                SizedBox(
+                  width: 424,
+                  height: 724,
                   child: Image(
-                      width: double.infinity,
-                      image: AssetImage(
-                        'assets/images/1.png',
-                      ),
-                      fit: BoxFit.fill),
+                    width: double.infinity,
+                    image: AssetImage(
+                      'assets/images/1.png',
+                    ),
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 Center(
                   child: Container(
-                    margin: const EdgeInsets.only(top: 450),
+                    margin: const EdgeInsets.only(top: 370),
                     width: 99,
                     height: 99,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-
                       color: Colors.transparent,
                       border: Border.all(
-                          color: const Color(0xFF7D4DC3),
-                          width: 3), // Outer circle color
+                        color: const Color(0xFF7D4DC3),
+                        width: 3,
+                      ),
                     ),
                     child: Center(
                       child: Container(
@@ -81,36 +93,35 @@ class OnBording extends StatelessWidget {
                             end: Alignment.bottomRight,
                             colors: [
                               Color(0xFFAA77FF),
-                              Color(0xFFD932D2),
+                              Color(0xFFDE5BF8),
                             ],
                             stops: [0.1242, 0.8177],
                           ),
                         ),
-                        child: Container(
-                          child: Center(
-                            child: IconButton(
-                              icon: const Icon(
-                                Icons.arrow_forward_ios, // Your icon
-                                color: Colors.white,
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const onboarding2()), // Replace NextPage() with the desired page
-                                );
-                              },
+                        child: Center(
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
                             ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => onboarding2()),
+                              );
+                            },
                           ),
                         ),
                       ),
                     ),
                   ),
-                )
-              ]),
+                ),
+              ],
             ),
-          ]),
+          ),
+        ],
+      ),
     );
   }
 }
