@@ -13,7 +13,7 @@ class Question extends StatelessWidget {
         Container(
           width: 340,
           height: 97,
-          margin: const EdgeInsets.only(top: 80.0, left: 18.0, right: 18),
+          margin: const EdgeInsets.only(top: 40.0, left: 18.0, right: 18),
           child: Padding(
             padding: const EdgeInsets.all(2),
             child: Container(

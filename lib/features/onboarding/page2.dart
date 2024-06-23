@@ -31,12 +31,12 @@ class onboarding2 extends StatelessWidget {
               ),
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 100, left: 46),
+                  padding: const EdgeInsets.only(top: 100, left: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(top: 100, left: 0),
+                        margin: const EdgeInsets.only(top: 50, left: 0),
                         child: const Text(
                           '        You can track your \n   progress day by day and \n   challenge yourself with \n               daily tasks',
                           style: TextStyle(

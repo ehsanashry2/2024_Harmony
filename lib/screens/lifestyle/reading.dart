@@ -38,7 +38,7 @@ class Reading extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const IconColorPicker(),
+         //   const IconColorPicker(),
             const SizedBox(height: 20),
             const FrequencySelector(),
             const SizedBox(height: 20),

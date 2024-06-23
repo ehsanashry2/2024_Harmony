@@ -3,8 +3,8 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
-class ProgressScreen extends StatelessWidget {
-  const ProgressScreen({Key? key});
+class Progresspage extends StatelessWidget {
+  const Progresspage({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -157,6 +157,6 @@ class ProgressScreen extends StatelessWidget {
 
   void main() {
   runApp(MaterialApp(
-    home: ProgressScreen(),
+    home: Progresspage(),
   ));
 }}

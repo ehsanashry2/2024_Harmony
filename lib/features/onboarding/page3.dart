@@ -14,7 +14,7 @@ class onboarding3 extends StatelessWidget {
             children: [
               Positioned(
                 top: 150,
-                left: 370,
+                left: 340,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -71,7 +71,7 @@ class onboarding3 extends StatelessWidget {
                 ),
                 Center(
                   child: Container(
-                    margin: const EdgeInsets.only(top: 370),
+                    margin: const EdgeInsets.only(top: 300),
                     width: 99,
                     height: 99,
                     decoration: BoxDecoration(

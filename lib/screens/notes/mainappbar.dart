@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/screens/lifestyle/aboutscreen.dart';
-import 'package:ocd/screens/lifestyle/life.dart';
+
 import 'package:ocd/screens/lifestyle/new.dart';
 import 'package:ocd/screens/lifestyle/reading.dart';
+import '../lifestyle/life.dart';
 import 'note_screen.dart';
 
 class MainScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class MainScreen extends StatelessWidget {
               // Navigate to the 'Reading' screen
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) =>  LifeStyleScreen()),
+                MaterialPageRoute(builder: (context) =>  Lifestylepage()),
               );
             },
             child: Icon(
@@ -45,7 +46,7 @@ class MainScreen extends StatelessWidget {
                 // Navigate to the 'DonePage' screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LifeStyleScreen()),
+                  MaterialPageRoute(builder: (context) => Lifestylepage()),
                 );
               },
               child: const Text(

@@ -40,7 +40,7 @@ class OnBording extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 100),
+                    margin: const EdgeInsets.only(top: 10),
                     child: const Text(
                       '      Welcome \n to your path to \n        healing ',
                       style: TextStyle(

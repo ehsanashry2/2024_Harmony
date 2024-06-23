@@ -59,9 +59,13 @@ class Congratulations extends StatelessWidget {
             ),
             Stack(
               children: [
-                const Image(
-                  image: AssetImage('assets/images/15.png'),
-                  fit: BoxFit.fill,
+                Center(
+                  child: const Image(
+                    width: 600,
+                    height: 450,
+                    image: AssetImage('assets/images/celeb.gif'),
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 100, left: 60),

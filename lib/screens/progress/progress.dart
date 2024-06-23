@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Proogress/progress.dart';
+
 class ProgressScreen extends StatelessWidget {
   const ProgressScreen({Key? key});
 
@@ -53,8 +55,7 @@ class ProgressScreen extends StatelessWidget {
                         ),
                       ),
                       child: Center(
-                        child: Container(
-
+                        child:Container(
                           width: 77,
                           height: 77,
                           decoration: BoxDecoration(
@@ -70,12 +71,23 @@ class ProgressScreen extends StatelessWidget {
                             ),
                           ),
                           child: Center(
-                            child: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.white,
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => Progresspage()),
+
+                                );
+                              },
                             ),
                           ),
                         ),
+
+
                       ),
                     ),
                   ),

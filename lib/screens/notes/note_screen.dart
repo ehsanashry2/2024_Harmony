@@ -46,7 +46,8 @@ class NotesScreen extends StatelessWidget {
             ),
             child: IconButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(NewNoteScreen.routeName);
+                Navigator.of(context).push(MaterialPageRoute
+                  (builder:(context)=> NewNoteScreen(),));
               },
               icon: const Icon(
                 Icons.add,

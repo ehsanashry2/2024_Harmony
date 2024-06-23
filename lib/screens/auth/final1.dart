@@ -24,7 +24,7 @@ class Final extends StatelessWidget {
         ),
         child: SafeArea(
           child: Container(
-            margin: EdgeInsets.only(top: 35),
+            margin: EdgeInsets.only(top: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
@@ -53,7 +53,7 @@ class Final extends StatelessWidget {
                       'assets/images/5.png',
                     ),
                     fit: BoxFit.fill),
-                const SizedBox(height: 40.0),
+                const SizedBox(height: 20.0),
                 const Text(
                     ' Please answer some questions \nfirst so that we can choose the\n  right therapeutic program for \n                         you ',
                     style: TextStyle(
@@ -97,7 +97,7 @@ class Final extends StatelessWidget {
                       end: Alignment.bottomRight,
                       colors: [
                         Color(0xFFAA77FF),
-                        Color(0xFFD932D2),
+                        Color(0xFFDE5BF8),
                       ],
                       stops: [0.1242, 0.8177],
                     ),

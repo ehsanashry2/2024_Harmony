@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ocd/screens/notes/mainappbar.dart';
 import 'package:provider/provider.dart';
 import '../../provider/noter_provider.dart';
+import 'note_screen.dart';
 
 class NewNoteScreen extends StatelessWidget {
   static const routeName = '/new-note';
@@ -14,8 +16,24 @@ class NewNoteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'New Note',
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        titleSpacing: 0, // Remove default padding around the title
+        leading: GestureDetector(
+          onTap: () {
+            // Navigate to the 'Reading' screen
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MainScreen()),
+            );
+          },
+          child: Icon(
+            Icons.arrow_back_ios, // Use arrow_back_ios for left arrow
+            color: Colors.black, // Set arrow color to black
+          ),
+        ),
+        title: Text(
+          'New Notes',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,

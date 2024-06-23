@@ -4,9 +4,6 @@ import 'Profill.dart';
 
 
 
-void main() {
-  runApp(const Editprofill());
-}
 
 class Editprofill extends StatelessWidget {
   const Editprofill({super.key});
@@ -14,16 +11,13 @@ class Editprofill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      theme: ThemeData(
-      ),
-      home: const SignUpScreen(),
+      home: const EditprofillScreen(),
     );
   }
 }
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class EditprofillScreen extends StatelessWidget {
+  const EditprofillScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

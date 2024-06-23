@@ -20,8 +20,8 @@ class SignUpScreen extends StatelessWidget {
             top: 5,
             left: 180,
             child: Container(
-              width: 650, // زيادة العرض
-              height: 650, // زيادة الارتفاع
+              width: 650,
+              height: 650,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.bottomRight,
@@ -49,7 +49,7 @@ class SignUpScreen extends StatelessWidget {
 
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.only(right: 16.0,left: 16,top:100,bottom: 16),
+              padding: const EdgeInsets.only(right: 16.0,left: 16,top:50,bottom: 16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
@@ -67,18 +67,27 @@ class SignUpScreen extends StatelessWidget {
                   const CustomTextField(
                     fieldName: 'Full Name',
                     //onChanged: (value) => signUpModel.fullName = value,
-                    prefixIcon: Icons.person,
+                    prefixImage: 'assets/images/name.png',
+                    prefixImageWidth: 20.0,
+                    prefixImageHeight: 26.0,
                   ),
                   CustomTextField(
-                    fieldName: 'email',
-                    //onChanged: (value) => signUpModel.email = value,
-                    prefixIcon: Icons.email,
+                    fieldName: 'Email',
+                  //  onChanged: (value) {
+
+                  //  },
+                    prefixImage: 'assets/images/email.png',
+                    prefixImageWidth: 26.0,
+                    prefixImageHeight: 20.0,
                   ),
+
                   const CustomTextField(
                     fieldName: 'Password',
                     //onChanged: (value) => signUpModel.password = value,
                     isPassword: true,
-                    prefixIcon: Icons.lock,
+                    prefixImage: 'assets/images/password.png',
+                    prefixImageWidth: 25.0,
+                    prefixImageHeight: 27.0,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +102,7 @@ class SignUpScreen extends StatelessWidget {
                             )),
                       ),
         Container(
-          width: 375.0, // عرض الحقل النصي
+          width: 375.0,
           margin: const EdgeInsets.only(top: 1.0, left: 20.0, right: 20, bottom: 10), // تعديل التمركز إذا لزم الأمر
           decoration: BoxDecoration(
             gradient: const LinearGradient(
@@ -123,10 +132,11 @@ class SignUpScreen extends StatelessWidget {
                       prefixIcon: Stack(
                         alignment: Alignment.center,
                         children: [
-                          Icon(
-                            Icons.calendar_today,
-                            size: 30,
-                            color: Color(0xFFAA77FF),
+                          Image.asset(
+                            'assets/images/birth.png', // استبدل بمسار الصورة في مشروعك
+                            width: 30,
+                            height: 30,
+                            color: Color(0xFFAA77FF), // يمكنك تحديد لون الصورة هنا إذا لزم الأمر
                           ),
                           Positioned(
                             right: 0.0,
@@ -140,6 +150,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+
                 ],
               ),
             ),

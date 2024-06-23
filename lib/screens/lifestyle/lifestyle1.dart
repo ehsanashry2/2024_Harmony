@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/screens/lifestyle/life.dart';
 
+
 class Lifestyle extends StatelessWidget {
   const Lifestyle({super.key});
 

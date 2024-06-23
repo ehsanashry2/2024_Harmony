@@ -1,42 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/screens/lifestyle/reading.dart';
+import 'package:ocd/screens/lifestyle/newhabit.dart'; // Ensure this is the correct path to NewHabit
+import 'package:ocd/screens/notes/mainappbar.dart';
 
-import '../notes/mainappbar.dart';
-
-void main() {
-  runApp(HabitPage());
-}
-
-// Define a class for grid items
-class GridItem {
-  final String name;
-  final Color color;
-  final String imagePath;
-
-  GridItem({
-    required this.name,
-    required this.color,
-    required this.imagePath,
-  });
-}
-
-class HabitPage extends StatelessWidget {
+class HabitPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LifeStyleScreen(),
-    );
-  }
+  _HabitPageState createState() => _HabitPageState();
 }
 
-class LifeStyleScreen extends StatefulWidget {
-  @override
-  _LifeStyleScreenState createState() => _LifeStyleScreenState();
-}
+class _HabitPageState extends State<HabitPage> {
+  Color? _selectedColor;
+  IconData? _selectedIcon;
 
-class _LifeStyleScreenState extends State<LifeStyleScreen> {
-  // List of data for each grid item as objects
   final List<GridItem> gridItems = [
     GridItem(
       name: 'Healthy Eating',
@@ -65,9 +39,6 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
     ),
   ];
 
-  // List to keep track of removed items
-  List<bool> isItemRemovedList = List.generate(5, (index) => false);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +46,6 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            SizedBox(height: 20),
             Expanded(
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -104,28 +74,24 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
     );
   }
 
-  Widget _buildGridItem(
-      BuildContext context, {
-        required String name,
-        required Color color,
-        required String imagePath,
-        required int index,
-      }) {
-    return isItemRemovedList[index]
-        ? SizedBox() // If the item is removed, return an empty sized box
-        : GestureDetector(
+  Widget _buildGridItem(BuildContext context, {
+    required String name,
+    required Color color,
+    required String imagePath,
+    required int index,
+  }) {
+    return GestureDetector(
       onTap: () {
         if (name == 'Reading') {
-          Navigator.push(
-            context,
+          Navigator.of(context).push(
             MaterialPageRoute(
-              fullscreenDialog: false, // This removes the AppBar
               builder: (context) => MainScreen(),
             ),
           );
         } else {
+          // Delete the item completely here
           setState(() {
-            isItemRemovedList[index] = true;
+            gridItems.removeAt(index);
           });
         }
       },
@@ -177,8 +143,9 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
                     padding: EdgeInsets.zero,
                     icon: Icon(Icons.close, size: 16),
                     onPressed: () {
+                      // Delete the item completely here
                       setState(() {
-                        isItemRemovedList[index] = true;
+                        gridItems.removeAt(index);
                       });
                     },
                   ),
@@ -194,13 +161,37 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
   Widget _buildAddButton() {
     return FloatingActionButton(
       onPressed: () {
-        setState(() {
-          // Reset the removed items list
-          isItemRemovedList = List.generate(5, (index) => false);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => NewHabit(),
+          ),
+        ).then((result) {
+          if (result != null && result.containsKey('name') && result.containsKey('color')) {
+            setState(() {
+              gridItems.add(GridItem(
+                name: result['name'],
+                color: result['color'],
+                imagePath: 'assets/images/Playing Piano.png', // Replace with actual logic for image path
+              ));
+            });
+          }
         });
       },
-      backgroundColor: Colors.purple,
+      backgroundColor: Color(0xFFAB93E0),
       child: Icon(Icons.add),
     );
   }
+}
+
+class GridItem {
+  final String name;
+  final Color color;
+  final String imagePath;
+
+  GridItem({
+    required this.name,
+    required this.color,
+    required this.imagePath,
+  });
 }

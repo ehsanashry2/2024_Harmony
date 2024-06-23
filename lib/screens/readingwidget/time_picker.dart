@@ -45,6 +45,33 @@ class _TimePickerState extends State<TimePicker> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Adding the text and divider here
+        const Row(
+          children: [
+            Expanded(
+              child: Divider(
+                color: Colors.grey,
+                thickness: 1,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Text(
+                'We will send you reminder at',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xff808080),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Divider(
+                color: Colors.grey,
+                thickness: 1,
+              ),
+            ),
+          ],
+        ),
         const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -100,4 +127,3 @@ class _TimePickerState extends State<TimePicker> {
     );
   }
 }
-
