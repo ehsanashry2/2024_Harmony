@@ -7,7 +7,7 @@ class Lifestyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE5D1FA),
+      backgroundColor: const Color(0xFFE5D1FA),
       body: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -76,7 +76,7 @@ class Lifestyle extends StatelessWidget {
                           child: Container(
                             child: Center(
                               child: IconButton(
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_forward_ios, // Your icon
                                   color: Colors.white,
                                 ),
@@ -84,7 +84,7 @@ class Lifestyle extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Lifestylepage()),
+                                        builder: (context) => const Lifestylepage()),
                                   );
                                 },
                               ),

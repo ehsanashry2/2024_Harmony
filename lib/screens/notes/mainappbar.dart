@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/screens/lifestyle/aboutscreen.dart';
-import 'package:ocd/screens/lifestyle/life.dart';
 import 'package:ocd/screens/lifestyle/new.dart';
 import 'package:ocd/screens/lifestyle/reading.dart';
 import 'note_screen.dart';
@@ -22,15 +20,15 @@ class MainScreen extends StatelessWidget {
               // Navigate to the 'Reading' screen
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LifeStyleScreen()),
+                MaterialPageRoute(builder: (context) => const LifeStyleScreen()),
               );
             },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios, // Use arrow_back_ios for left arrow
               color: Colors.black, // Set arrow color to black
             ),
           ),
-          title: Text(
+          title: const Text(
             'Reading',
             style: TextStyle(
               color: Colors.black,
@@ -45,7 +43,7 @@ class MainScreen extends StatelessWidget {
                 // Navigate to the 'DonePage' screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LifeStyleScreen()),
+                  MaterialPageRoute(builder: (context) => const LifeStyleScreen()),
                 );
               },
               child: const Text(
@@ -62,7 +60,7 @@ class MainScreen extends StatelessWidget {
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(50),
             child: Container(
-              color: Color(0xFFEAEAEA),
+              color: const Color(0xFFEAEAEA),
               child: TabBar(
                 indicator: BoxDecoration(
                   color: const Color(0xFFAA77FF),
@@ -73,7 +71,7 @@ class MainScreen extends StatelessWidget {
                 tabs: [
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           horizontal:
                               16), // Adjust the horizontal padding as needed
                       child: Container(
@@ -89,7 +87,7 @@ class MainScreen extends StatelessWidget {
                   ),
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           horizontal:
                               16), // Adjust the horizontal padding as needed
                       child: Container(
@@ -108,10 +106,10 @@ class MainScreen extends StatelessWidget {
             ),
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             NotesScreen(),
-            const Reading(),
+            Reading(),
           ],
         ),
       ),

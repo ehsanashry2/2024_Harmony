@@ -19,7 +19,7 @@ class onboarding2 extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => onboarding3()),
+                      MaterialPageRoute(builder: (context) => const onboarding3()),
                     );
                   },
                   child: Image.asset(
@@ -56,7 +56,7 @@ class onboarding2 extends StatelessWidget {
           Expanded(
             child: Stack(
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 424,
                   height: 724,
                   child: Image(

@@ -147,7 +147,6 @@ class ProgressPage extends StatelessWidget {
 // ignore_for_file: prefer_const_constructors
 //Lifestylepage
 import 'package:flutter/material.dart';
-import 'package:ocd/screens/Memory/Memory.dart';
 import 'package:ocd/screens/Proogress/progress.dart';
 import 'package:ocd/screens/lifestyle/new.dart';
 import '../Memory/Memorypage.dart';
@@ -276,7 +275,7 @@ class _MyCustomTabState extends State<MyCustomTab> {
               ),
             ),
             Expanded(
-              child: TabBarView(children: [
+              child: TabBarView(children: const [
                 HabitPage(),
                 ImagePickerPage(),
                 ProgressScreen(),

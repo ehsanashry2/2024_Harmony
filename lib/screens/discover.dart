@@ -66,7 +66,7 @@ class Discover extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
+          const Text(
             'Discover',
             style: TextStyle(
                 color: Colors.black,
@@ -134,7 +134,7 @@ class Discover extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AI(),
+                              builder: (context) => const AI(),
                             ),
                           );
                           break;
@@ -142,7 +142,7 @@ class Discover extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Lifestyle(),
+                              builder: (context) => const Lifestyle(),
                             ),
                           );
                           break;
@@ -150,7 +150,7 @@ class Discover extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Breathe(),
+                              builder: (context) => const Breathe(),
                             ),
                           );
                           break;
@@ -158,7 +158,7 @@ class Discover extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Podcast(),
+                              builder: (context) => const Podcast(),
                             ),
                           );
                           break;
@@ -166,7 +166,7 @@ class Discover extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Articles(),
+                              builder: (context) => const Articles(),
                             ),
                           );
                           break;
@@ -174,7 +174,7 @@ class Discover extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Games(),
+                              builder: (context) => const Games(),
                             ),
                           );
                         // Add cases for other indices

@@ -24,7 +24,7 @@ class Final extends StatelessWidget {
         ),
         child: SafeArea(
           child: Container(
-            margin: EdgeInsets.only(top: 35),
+            margin: const EdgeInsets.only(top: 35),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
@@ -73,7 +73,7 @@ class Final extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => LayOutScreen()),
+                              builder: (context) => const LayOutScreen()),
                         );
                       },
                       child: Container(
@@ -83,7 +83,7 @@ class Final extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: Colors.white,
                           border: Border.all(
-                            color: Color(0xFF7D4DC3),
+                            color: const Color(0xFF7D4DC3),
                             width: 3,
                           ),
                         ),
@@ -91,7 +91,7 @@ class Final extends StatelessWidget {
                           child: Container(
                             width: 77,
                             height: 77,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               gradient: LinearGradient(
                                 begin: Alignment.topLeft,
@@ -107,7 +107,7 @@ class Final extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(
+                                  const Text(
                                     '\n Start',
                                     style: TextStyle(
                                       color: Colors.white,
@@ -116,7 +116,7 @@ class Final extends StatelessWidget {
                                       fontFamily: 'workSans',
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                       height: 1), // Adjust spacing as needed
                                   Image.asset(
                                     'assets/images/top.png',

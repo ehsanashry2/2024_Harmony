@@ -102,7 +102,7 @@ class Congratulations extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LayOutScreen()),
+                        MaterialPageRoute(builder: (context) => const LayOutScreen()),
                       );
                     },
                     child: const Text(
@@ -177,7 +177,7 @@ class Congratulations extends StatelessWidget {
               Text(
                 getDescription(level),
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
                 ),
@@ -188,7 +188,7 @@ class Congratulations extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LayOutScreen()),
+                    MaterialPageRoute(builder: (context) => const LayOutScreen()),
                   );
                 },
                 topMargin: 0,

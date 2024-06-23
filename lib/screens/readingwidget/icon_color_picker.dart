@@ -57,7 +57,7 @@ class _IconColorPickerState extends State<IconColorPicker> {
         decoration: BoxDecoration(
           color: color,
           border: _selectedColor == color
-              ? Border.all(color: Color(0xFFAA77FF), width: 2)
+              ? Border.all(color: const Color(0xFFAA77FF), width: 2)
               : null,
           borderRadius: BorderRadius.circular(8),
         ),

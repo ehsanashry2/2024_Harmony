@@ -77,7 +77,7 @@ class AI extends StatelessWidget {
                           child: Container(
                             child: Center(
                               child: IconButton(
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_forward_ios, // Your icon
                                   color: Colors.white,
                                 ),
@@ -86,7 +86,7 @@ class AI extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            ChaBot()), // Replace NextPage() with the desired page
+                                            const ChaBot()), // Replace NextPage() with the desired page
                                   );
                                 },
                               ),

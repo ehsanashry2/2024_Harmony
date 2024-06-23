@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ocd/screens/lifestyle/reading.dart';
 
 import '../notes/mainappbar.dart';
 
 void main() {
-  runApp(HabitPage());
+  runApp(const HabitPage());
 }
 
 // Define a class for grid items
@@ -21,9 +20,11 @@ class GridItem {
 }
 
 class HabitPage extends StatelessWidget {
+  const HabitPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LifeStyleScreen(),
     );
@@ -31,6 +32,8 @@ class HabitPage extends StatelessWidget {
 }
 
 class LifeStyleScreen extends StatefulWidget {
+  const LifeStyleScreen({super.key});
+
   @override
   _LifeStyleScreenState createState() => _LifeStyleScreenState();
 }
@@ -40,27 +43,27 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
   final List<GridItem> gridItems = [
     GridItem(
       name: 'Healthy Eating',
-      color: Color(0xFFD3E9F7),
+      color: const Color(0xFFD3E9F7),
       imagePath: 'assets/images/Healthy.png',
     ),
     GridItem(
       name: 'Reading',
-      color: Color(0xFFE5D1FA),
+      color: const Color(0xFFE5D1FA),
       imagePath: 'assets/images/Reading.png',
     ),
     GridItem(
       name: 'Gym',
-      color: Color(0xFFE3DFFD),
+      color: const Color(0xFFE3DFFD),
       imagePath: 'assets/images/Gym.png',
     ),
     GridItem(
       name: 'Planting',
-      color: Color(0xFFD3E9F7),
+      color: const Color(0xFFD3E9F7),
       imagePath: 'assets/images/Planting.png',
     ),
     GridItem(
       name: 'Playing Piano',
-      color: Color(0xFFE5D1FA),
+      color: const Color(0xFFE5D1FA),
       imagePath: 'assets/images/Playing Piano.png',
     ),
   ];
@@ -75,10 +78,10 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
@@ -96,7 +99,7 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
                 },
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildAddButton(),
           ],
         ),
@@ -112,7 +115,7 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
         required int index,
       }) {
     return isItemRemovedList[index]
-        ? SizedBox() // If the item is removed, return an empty sized box
+        ? const SizedBox() // If the item is removed, return an empty sized box
         : GestureDetector(
       onTap: () {
         if (name == 'Reading') {
@@ -120,7 +123,7 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
             context,
             MaterialPageRoute(
               fullscreenDialog: false, // This removes the AppBar
-              builder: (context) => MainScreen(),
+              builder: (context) => const MainScreen(),
             ),
           );
         } else {
@@ -130,7 +133,7 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
         }
       },
       child: Container(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(10),
@@ -146,10 +149,10 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
                     width: 70,
                     height: 70,
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
@@ -175,7 +178,7 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
                 child: Center(
                   child: IconButton(
                     padding: EdgeInsets.zero,
-                    icon: Icon(Icons.close, size: 16),
+                    icon: const Icon(Icons.close, size: 16),
                     onPressed: () {
                       setState(() {
                         isItemRemovedList[index] = true;
@@ -200,7 +203,7 @@ class _LifeStyleScreenState extends State<LifeStyleScreen> {
         });
       },
       backgroundColor: Colors.purple,
-      child: Icon(Icons.add),
+      child: const Icon(Icons.add),
     );
   }
 }

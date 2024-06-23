@@ -67,7 +67,7 @@ class SignUpScreen extends StatelessWidget {
                     //onChanged: (value) => signUpModel.fullName = value,
                     prefixIcon: Icons.person,
                   ),
-                  CustomTextField(
+                  const CustomTextField(
                     fieldName: 'email',
                     //onChanged: (value) => signUpModel.email = value,
                     prefixIcon: Icons.email,
@@ -128,7 +128,7 @@ class SignUpScreen extends StatelessWidget {
                                       prefixIcon: Stack(
                                         alignment: Alignment.center,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.calendar_today,
                                             size: 30,
                                             color: Color(0xFFAA77FF),
@@ -182,10 +182,10 @@ class SignUpScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignIn()),
+                        MaterialPageRoute(builder: (context) => const SignIn()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Sign in',
                       style: TextStyle(
                         color: Color(0xFFAA77FF),

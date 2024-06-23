@@ -37,11 +37,11 @@ class Survey extends StatelessWidget {
                     Container(
                       width: 40,
                       height: 37,
-                      margin: EdgeInsets.only(left: 17), // المسافة من الناحية الشمالية
-                      padding: EdgeInsets.all(4), // الحواف الداخلية للـ Container
+                      margin: const EdgeInsets.only(left: 17), // المسافة من الناحية الشمالية
+                      padding: const EdgeInsets.all(4), // الحواف الداخلية للـ Container
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10), // تعيين نصف قطر الحواف المستديرة
-                        color: Color(0xFFFFFFFF),
+                        color: const Color(0xFFFFFFFF),
                       ),
                       child: Center( // وضع الأيقونة في وسط الـ Container
                         child: IconButton(
@@ -62,7 +62,7 @@ class Survey extends StatelessWidget {
                           value: controller.currentQuestionIndex.value /
                               (controller.surveyquestions.length - 1),
                           backgroundColor: Colors.grey.shade300,
-                          valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFAA77FF)),
+                          valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFAA77FF)),
                           minHeight: 13, // ارتفاع الـ LinearProgressIndicator
                         ),
                       ),

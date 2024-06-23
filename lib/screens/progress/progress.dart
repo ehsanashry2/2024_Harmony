@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ProgressScreen extends StatelessWidget {
-  const ProgressScreen({Key? key});
+  const ProgressScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +13,8 @@ class ProgressScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 100),
+            const Padding(
+              padding: EdgeInsets.only(top: 100),
               child: Center(
                 child: Text(
                   "Track your progress and achieve\nyour goals with the progress\nscreen",
@@ -56,7 +58,7 @@ class ProgressScreen extends StatelessWidget {
                         child: Container(
                           width: 77,
                           height: 77,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             gradient: LinearGradient(
                               begin: Alignment.topLeft,
@@ -68,7 +70,7 @@ class ProgressScreen extends StatelessWidget {
                               stops: [0.1242, 0.8177],
                             ),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.white,

@@ -106,10 +106,10 @@ class onboarding3 extends StatelessWidget {
                               stops: [0.1242, 0.8177],
                             ),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
+                              children: [
                                 Text(
                                   'Start',
                                   style: TextStyle(

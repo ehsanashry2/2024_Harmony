@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // استيراد مكتبة GetX
-import 'package:ocd/screens/auth/signup.dart';
+import 'package:ocd/screens/breathe/videos.dart';
 import 'package:provider/provider.dart';
 import 'package:ocd/provider/noter_provider.dart';
-
-import 'package:ocd/screens/notes/NewNoteDetalis.dart';
-import 'package:ocd/screens/notes/newnotscreen.dart';
-
-import 'features/onboarding/page1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +18,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         // استخدام GetMaterialApp بدلاً من MaterialApp
         debugShowCheckedModeBanner: false,
-        home: OnBording(),
+        home: VideoListScreen(),
       ),
     );
   }

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
 class ProgressScreen extends StatelessWidget {
-  const ProgressScreen({Key? key});
+  const ProgressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +14,16 @@ class ProgressScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildDateHeader(),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             _buildStatsRow(),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _buildAchievementSection(),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _buildCircularProgress(),
-            SizedBox(height: 20), // Adjusted space after circular progress
-             // New: Date picker widget
-            SizedBox(height: 20), // Additional space at the bottom
+            const SizedBox(
+                height: 20), // Adjusted space after circular progress
+            // New: Date picker widget
+            const SizedBox(height: 20), // Additional space at the bottom
           ],
         ),
       ),
@@ -54,16 +54,16 @@ class ProgressScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Today',
             style: TextStyle(fontSize: 20, color: Colors.grey),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             formattedDate,
-            style: TextStyle(color: Colors.grey, fontSize: 14),
+            style: const TextStyle(color: Colors.grey, fontSize: 14),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Container(
             height: 1,
             color: Colors.grey,
@@ -78,15 +78,21 @@ class ProgressScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          child: _buildStatCard('Current Streak', ' 7 days', Icons.whatshot, Colors.orange, width: 120, height: 150),
+          child: _buildStatCard(
+              'Current Streak', ' 7 days', Icons.whatshot, Colors.orange,
+              width: 120, height: 150),
         ),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Expanded(
-          child: _buildStatCard('Done', '\n4 days', Icons.check_circle, Colors.green, width: 120, height: 150),
+          child: _buildStatCard(
+              'Done', '\n4 days', Icons.check_circle, Colors.green,
+              width: 120, height: 150),
         ),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Expanded(
-          child: _buildStatCard('Skipped', '\n 3 days', Icons.cancel, Colors.red, width: 120, height: 150),
+          child: _buildStatCard(
+              'Skipped', '\n 3 days', Icons.cancel, Colors.red,
+              width: 120, height: 150),
         ),
       ],
     );
@@ -100,14 +106,16 @@ class ProgressScreen extends StatelessWidget {
       height: height,
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Color(0xFFE5D1FA), // Use the specified color E5D1FA
+        color: const Color(0xFFE5D1FA), // Use the specified color E5D1FA
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          Text(title,
+              style:
+                  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           const SizedBox(height: 4),
           Text(count, style: const TextStyle(fontSize: 16)),
           const SizedBox(height: 8),
@@ -119,7 +127,7 @@ class ProgressScreen extends StatelessWidget {
 
   Widget _buildAchievementSection() {
     return Container(
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -156,7 +164,8 @@ class ProgressScreen extends StatelessWidget {
   }
 
   void main() {
-  runApp(MaterialApp(
-    home: ProgressScreen(),
-  ));
-}}
+    runApp(const MaterialApp(
+      home: ProgressScreen(),
+    ));
+  }
+}

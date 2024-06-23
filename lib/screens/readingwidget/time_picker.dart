@@ -9,7 +9,7 @@ class TimePicker extends StatefulWidget {
 
 class _TimePickerState extends State<TimePicker> {
   String _selectedButton = 'AM';
-  TimeOfDay _selectedTime = TimeOfDay(hour: 9, minute: 0); // تعيين الوقت الافتراضي إلى الساعة 9:00 صباحًا
+  TimeOfDay _selectedTime = const TimeOfDay(hour: 9, minute: 0); // تعيين الوقت الافتراضي إلى الساعة 9:00 صباحًا
 
   void _toggleButtonColor(String text) {
     setState(() {
@@ -60,7 +60,7 @@ class _TimePickerState extends State<TimePicker> {
                 ),
                 child: Text(
                   '${_selectedTime.hour}:${_selectedTime.minute.toString().padLeft(2, '0')}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),

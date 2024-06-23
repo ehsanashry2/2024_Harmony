@@ -23,14 +23,14 @@ class CategoryButton12 extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
           // Rounded corners
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.25),
               spreadRadius: 1,
               blurRadius: 4,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -39,7 +39,7 @@ class CategoryButton12 extends StatelessWidget {
           children: <Widget>[
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
