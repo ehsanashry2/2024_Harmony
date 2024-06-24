@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ocd/cubits/auth_cubit/auth_cubit.dart';
 import 'package:ocd/screens/home/Home/editprofill.dart';
 import 'dart:ui';
 
@@ -39,7 +41,7 @@ class _ProfilState extends State<Profil> {
                     margin: EdgeInsets.only(left: 0),
                     child: _buildTextField(
                       labelText: 'Mail ',
-                      additionalText: 'Omar@gmail.com',
+                      additionalText: BlocProvider.of<AuthCubit>(context).email,
                     ),
                   ),
                   Divider(
@@ -257,7 +259,7 @@ class _ProfilState extends State<Profil> {
           ),
           SizedBox(height: 8),
           Text(
-            "Omar Ahmed",
+            BlocProvider.of<AuthCubit>(context).userName??'Omar Ahmed',
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w600,

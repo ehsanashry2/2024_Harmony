@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart'; // استيراد مكتبة GetX
+import 'package:ocd/cubits/auth_cubit/auth_cubit.dart';
 import 'package:ocd/screens/auth/forgetpassword.dart';
 import 'package:ocd/screens/auth/signup.dart';
 import 'package:ocd/screens/lifestyle/life.dart';
 import 'package:ocd/screens/podcast/podcastpage.dart';
-
 
 import 'package:provider/provider.dart';
 import 'package:ocd/provider/noter_provider.dart';
@@ -25,11 +26,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => NoteProvider(),
-      child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        home:OnBoarding ()
-    ));
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create:(context) => AuthCubit(),),
+      ],
+      child: ChangeNotifierProvider(
+          create: (context) => NoteProvider(),
+          child: const GetMaterialApp(
+              debugShowCheckedModeBanner: false, home: OnBoarding())),
+    );
   }
 }

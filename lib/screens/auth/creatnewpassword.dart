@@ -69,7 +69,7 @@ class CreateNewPasswordScreen extends StatelessWidget {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xFFAA77FF),
+                  //primary: Color(0xFFAA77FF),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
                   ),

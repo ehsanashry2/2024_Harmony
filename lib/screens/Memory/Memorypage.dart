@@ -51,7 +51,7 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
                     style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFFECF2FF),
+                    //primary: Color(0xFFECF2FF),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

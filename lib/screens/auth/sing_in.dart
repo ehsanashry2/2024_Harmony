@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ocd/cubits/auth_cubit/auth_cubit.dart';
 import 'package:ocd/screens/auth/final1.dart';
 import 'package:ocd/screens/auth/forgetpassword.dart';
 import 'package:ocd/screens/auth/signup.dart';
@@ -37,21 +39,26 @@ class SignIn extends StatelessWidget {
               fit: BoxFit.fill,
             ),
             const SizedBox(height: 40.0),
-            const CustomTextField(
+            CustomTextField(
+              onChanged: (value) {
+                BlocProvider.of<AuthCubit>(context).email = value;
+              },
               fieldName: 'Email',
               isPassword: false,
               prefixImage: 'assets/images/email.png',
               prefixImageWidth: 26.0,
               prefixImageHeight: 20.0,
             ),
-            const CustomTextField(
+            CustomTextField(
+              onChanged: (value) {
+                BlocProvider.of<AuthCubit>(context).password = value;
+              },
               fieldName: 'Password',
               isPassword: true,
               prefixImage: 'assets/images/password.png',
               prefixImageWidth: 24.0,
               prefixImageHeight: 27.0,
             ),
-            
             Padding(
               padding: const EdgeInsets.only(top: 10.0, left: 200.0),
               child: InkWell(
@@ -75,7 +82,8 @@ class SignIn extends StatelessWidget {
             const SizedBox(height: 20.0),
             CustomButton(
               buttonText: 'Sign In',
-              onPressed: () {
+              onPressed: () async {
+                await BlocProvider.of<AuthCubit>(context).login();
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const Final()),
