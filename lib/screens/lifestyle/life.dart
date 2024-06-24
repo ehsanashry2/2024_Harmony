@@ -40,7 +40,7 @@ class _LifestylepageState extends State<Lifestylepage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>LayOutScreen()),
+                  MaterialPageRoute(builder: (context) => LayOutScreen()),
                 );
               },
             ),

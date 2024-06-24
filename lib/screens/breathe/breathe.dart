@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ocd/screens/breathe/breathescreen.dart';
 
 class Breathe extends StatelessWidget {
   const Breathe({super.key});
@@ -45,42 +46,53 @@ class Breathe extends StatelessWidget {
                         fit: BoxFit.fill),
                   ),
                   Center(
-                    child: Container(
-                      margin: const EdgeInsets.only(top: 340),
-                      width: 99,
-                      height: 99,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.transparent,
-                        border: Border.all(
+                    child:GestureDetector(
+                      onTap: () {
+                        // Navigate to another page or perform an action when tapped
+                        // Example:
+                         Navigator.push(context, MaterialPageRoute(builder: (context) =>YouTubeVideoListScreen()),
+
+                         );
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 340),
+                        width: 99,
+                        height: 99,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.transparent,
+                          border: Border.all(
                             color: const Color(0xFF7D4DC3),
-                            width: 3), // Outer circle color
-                      ),
-                      child: Center(
-                        child: Container(
-                          width: 77,
-                          height: 77,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Color(0xFFAA77FF),
-                                Color(0xFFD932D2),
-                              ],
-                              stops: [0.1242, 0.8177],
+                            width: 3,
+                          ), // Outer circle color
+                        ),
+                        child: Center(
+                          child: Container(
+                            width: 77,
+                            height: 77,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Color(0xFFAA77FF),
+                                  Color(0xFFD932D2),
+                                ],
+                                stops: [0.1242, 0.8177],
+                              ),
                             ),
-                          ),
-                          child: const Center(
-                            child: Icon(
-                              Icons.arrow_forward_ios, // Your icon
-                              color: Colors.white,
+                            child: const Center(
+                              child: Icon(
+                                Icons.arrow_forward_ios, // Your icon
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    )
+
                   ),
                 ]),
               ),

@@ -10,9 +10,9 @@ class SurveyCart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 350,
-      height: 180,
-      margin: const EdgeInsets.all(10),
-      padding: const EdgeInsets.all(10),
+      height: 140,
+      margin: const EdgeInsets.only(left: 15),
+      padding: const EdgeInsets.only(left: 10),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         gradient: LinearGradient(
@@ -33,8 +33,8 @@ class SurveyCart extends StatelessWidget {
             right: 0,
             child: Image.asset(
               'assets/images/Group (2).png',
-              width: 165,
-              height: 160,
+              width: 160,
+              height: 140,
               fit: BoxFit.fill,
             ),
           ),
@@ -54,7 +54,7 @@ class SurveyCart extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(top: 100),
             width: 147,
-            height: 40,
+            height: 30,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15) // Outer circle color
@@ -71,7 +71,7 @@ class SurveyCart extends StatelessWidget {
               child: const Text(
                 'Start Survey',
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 13,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'WorkSans',
                   color: Colors.black,

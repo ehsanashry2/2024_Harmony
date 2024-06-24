@@ -44,6 +44,10 @@ dependencies:
   table_calendar: ^3.0.8
   flutter_datetime_picker: ^1.5.1
   shared_preferences: ^2.0.6
+  audioplayers: ^5.2.1
+  youtube_player_flutter: ^8.0.0
+
+
 
 
 

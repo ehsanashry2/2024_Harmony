@@ -38,9 +38,9 @@ class CategoryButton extends StatelessWidget {
           Text(
             label,
             style: TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+              fontSize: 17.0,
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
             ),
           ),
           Padding(

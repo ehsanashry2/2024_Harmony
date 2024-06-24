@@ -42,6 +42,7 @@ class CategoryButton12 extends StatelessWidget {
           children: <Widget>[
             Text(
               label,
+
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,

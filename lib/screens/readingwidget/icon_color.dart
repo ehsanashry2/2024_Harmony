@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class IconColorPicker extends StatefulWidget {
+class IconColor extends StatefulWidget {
   final void Function(Color color, IconData icon) onSelectionChanged;
 
-  const IconColorPicker({Key? key, required this.onSelectionChanged}) : super(key: key);
+  const IconColor({Key? key, required this.onSelectionChanged}) : super(key: key);
 
   @override
-  _IconColorPickerState createState() => _IconColorPickerState();
+  _IconColorState createState() => _IconColorState();
 }
 
-class _IconColorPickerState extends State<IconColorPicker> {
+class _IconColorState extends State<IconColor> {
   Color? _selectedColor;
   IconData? _selectedIcon;
 
@@ -22,13 +22,11 @@ class _IconColorPickerState extends State<IconColorPicker> {
     Icons.mail,
     Icons.notifications,
     Icons.settings,
-    Icons.menu_book_outlined,
   ];
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
           onTap: () {
@@ -54,7 +52,7 @@ class _IconColorPickerState extends State<IconColorPicker> {
             ],
           ),
         ),
-        const SizedBox(height: 8,width: 138,),
+        const SizedBox(width: 16),
         Row(
           children: [
             _buildColorBox(const Color(0xFFE5D1FA)),

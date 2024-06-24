@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:ocd/screens/lifestyle/aboutscreen.dart';
-
 import 'package:ocd/screens/lifestyle/new.dart';
 import 'package:ocd/screens/lifestyle/reading.dart';
 import '../lifestyle/life.dart';
 import 'note_screen.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  late String _name;
+  late Color _color;
+  late IconData _icon;
 
   @override
   Widget build(BuildContext context) {
@@ -17,18 +25,14 @@ class MainScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          titleSpacing: 0, // Remove default padding around the title
+          titleSpacing: 0,
           leading: GestureDetector(
             onTap: () {
-              // Navigate to the 'Reading' screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>  Lifestylepage()),
-              );
+              Navigator.pop(context); // Replace push with pop to go back
             },
             child: Icon(
-              Icons.arrow_back_ios, // Use arrow_back_ios for left arrow
-              color: Colors.black, // Set arrow color to black
+              Icons.arrow_back_ios,
+              color: Colors.black,
             ),
           ),
           title: Text(
@@ -43,11 +47,11 @@ class MainScreen extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                // Navigate to the 'DonePage' screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Lifestylepage()),
-                );
+                Navigator.pop(context, {
+                  'name': _name,
+                  'color': _color,
+                  'icon': _icon,
+                });// Replace push with pop to go back
               },
               child: const Text(
                 'Done',
@@ -74,7 +78,7 @@ class MainScreen extends StatelessWidget {
                 tabs: [
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16), // Adjust the horizontal padding as needed
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -88,7 +92,7 @@ class MainScreen extends StatelessWidget {
                   ),
                   Tab(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16), // Adjust the horizontal padding as needed
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -108,7 +112,7 @@ class MainScreen extends StatelessWidget {
         body: TabBarView(
           children: [
             NotesScreen(),
-            const Reading(),
+            Reading()// Placeholder for the second tab content (AboutScreen or any other)
           ],
         ),
       ),

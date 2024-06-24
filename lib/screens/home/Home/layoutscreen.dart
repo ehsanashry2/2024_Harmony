@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ocd/screens/discover.dart';
 import 'package:ocd/screens/home/Home/Homepage.dart';
 import 'package:ocd/screens/home/Home/Profill.dart';
+import 'package:ocd/screens/home/Home/soon.dart';
+import 'package:ocd/screens/notes/1233.dart';
 
 class LayOutScreen extends StatefulWidget {
   const LayOutScreen({Key? key}) : super(key: key);
@@ -14,7 +16,7 @@ class _LayOutScreenState extends State<LayOutScreen> {
   int pageIndex = 0;
 
   final pages = [
-    const HomePage(),
+    HomePage(),
     const Discover(),
     const Profil(),
   ];
