@@ -20,10 +20,7 @@ class YouTubeVideoListScreen extends StatelessWidget {
         centerTitle: true,
         leading: GestureDetector(
           onTap: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => LayOutScreen()), // Replace LayOutScreen with your Home page
-            );
+            Navigator.pop(context);
           },
           child: Icon(Icons.arrow_back_ios, color: Colors.black),
         ),

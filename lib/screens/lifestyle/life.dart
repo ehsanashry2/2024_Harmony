@@ -38,10 +38,7 @@ class _LifestylepageState extends State<Lifestylepage> {
             child: IconButton(
               icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LayOutScreen()),
-                );
+                Navigator.pop(context);
               },
             ),
           ),

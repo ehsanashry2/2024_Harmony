@@ -50,7 +50,7 @@ class Breathe extends StatelessWidget {
                       onTap: () {
                         // Navigate to another page or perform an action when tapped
                         // Example:
-                         Navigator.push(context, MaterialPageRoute(builder: (context) =>YouTubeVideoListScreen()),
+                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>YouTubeVideoListScreen()),
 
                          );
                       },

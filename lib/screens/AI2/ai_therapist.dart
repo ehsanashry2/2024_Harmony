@@ -38,12 +38,7 @@ class _ChaBotState extends State<ChaBot> {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          LayOutScreen()), // Replace NextPage() with the desired page
-                );
+                Navigator.pop(context);
               },
               color: Colors.black,
             ),

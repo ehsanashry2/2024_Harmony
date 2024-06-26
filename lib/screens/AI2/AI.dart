@@ -82,7 +82,7 @@ class AI extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                                 onPressed: () {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
